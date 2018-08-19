@@ -2,7 +2,8 @@
 基于dvajs后的一次新尝试，引入umijs、服务端渲染SSR等，仍然保持React、Redux等技术栈。
 - React + Redux + dvajs + umijs等
 - Preview： http://kquanr.com/3.x
-- others：1.x（http://kquanr.com）、2.x（ http://kquanr.com/2.x）
+- 1.x：http://kquanr.com
+- 2.x：http://kquanr.com/2.x
 
 # Usage
 * umijs：https://umijs.org
