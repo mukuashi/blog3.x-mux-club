@@ -1,0 +1,34 @@
+{
+  "name": "blog3.x-mux-club",
+  "version": "1.0.0",
+  "description": "3.x mukuashi@PhotoArtLife Blog ☔️",
+  "private": true,
+  "scripts": {
+    "start": "cross-env PORT=8080 umi dev",
+    "build": "umi build",
+    "lint": "eslint --ext .js src test",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-rc.1",
+    "classnames": "^2.2.6",
+    "react-intl": "^2.4.0",
+    "umi": "*",
+    "umi-plugin-dva": "*",
+    "umi-plugin-routes": "*",
+    "url-polyfill": "^1.0.14"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "eslint": "^5.4.0",
+    "eslint-config-umi": "^0.1.5",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0"
+  }
+}
