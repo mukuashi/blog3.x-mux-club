@@ -1,5 +1,3 @@
-# blog3.x-mux-club
-☔️3.x blog | use nodejs、dvajs、umijs.etc made a animate manage flex web.
 # 3.x Version Blog
 基于dvajs后的一次新尝试，引入umijs、服务端渲染SSR等，仍然保持React、Redux等技术栈。
 - React + Redux + dvajs + umijs等
