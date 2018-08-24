@@ -6,17 +6,20 @@
   "scripts": {
     "start": "cross-env PORT=8080 umi dev",
     "build": "umi build",
-    "lint": "eslint --ext .js src test",
-    "precommit": "npm run lint"
+    "analyze": "cross-env ANALYZE=1 umi build",
+    "lint": "eslint --fix --ext .js src",
+    "precommit": "npm run lint",
+    "test": "umi test"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-rc.1",
+    "@babel/polyfill": "^7.0.0-rc.2",
+    "antd": "^3.8.2",
     "classnames": "^2.2.6",
     "react-intl": "^2.4.0",
-    "umi": "*",
-    "umi-plugin-dva": "*",
-    "umi-plugin-routes": "*",
-    "url-polyfill": "^1.0.14"
+    "rc-tween-one": "^2.2.3",
+    "prop-types": "^15.6.2",
+    "url-polyfill": "^1.0.14",
+    "rc-texty": "^0.1.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -29,6 +32,9 @@
     "husky": "^0.14.3",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.3",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "svg-sprite-loader": "^3.9.2",
+    "umi": "2.0.0-beta.17",
+    "umi-plugin-react": "1.0.0-beta.17"
   }
 }
