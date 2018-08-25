@@ -34,7 +34,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
+    "lint-staged": "^7.2.2",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.3",
     "prettier": "1.14.2",
@@ -48,16 +48,20 @@
     "umi-plugin-react": "1.0.0-beta.17"
   },
   "optionalDependencies": {
-    "puppeteer": "^1.6.0"
+    "puppeteer": "^1.7.0"
   },
   "lint-staged": {
     "**/*.{js,jsx,scss,less}": [
-      "prettier --write",
+      "prettier --parser flow --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --parser typescript --write",
       "git add"
     ],
     "**/*.{js,jsx}": "npm run lint-staged:js",
-    "**/*.less": "stylelint --syntax less",
-    "**/*.scss": "stylelint --syntax scss"
+    "**/*.scss": "stylelint --syntax scss",
+    "**/*.less": "stylelint --syntax less"
   },
   "engines": {
     "node": ">=8.9.0"
