@@ -8,8 +8,11 @@
     "build": "umi build",
     "analyze": "cross-env ANALYZE=1 umi build",
     "lint": "eslint --fix --ext .js src",
-    "precommit": "npm run lint",
-    "test": "umi test"
+    "precommit": "npm run lint-staged",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js",
+    "test": "umi test",
+    "prettier": "prettier --write ./src/**/**/**/*"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.2",
@@ -24,17 +27,44 @@
   "devDependencies": {
     "cross-env": "^5.2.0",
     "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
     "eslint-config-umi": "^0.1.5",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.3",
+    "prettier": "1.14.2",
     "sass-loader": "^7.1.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.3.0",
     "svg-sprite-loader": "^3.9.2",
-    "umi": "2.0.0-beta.17",
+    "umi": "2.0.0-beta.18",
     "umi-plugin-react": "1.0.0-beta.17"
-  }
+  },
+  "optionalDependencies": {
+    "puppeteer": "^1.6.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,scss,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint-staged:js",
+    "**/*.less": "stylelint --syntax less",
+    "**/*.scss": "stylelint --syntax scss"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ]
 }
