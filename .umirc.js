@@ -1,32 +1,41 @@
-import { resolve } from "path";
+import { resolve } from 'path';
 //
 export default {
   // for query-string@6 https://github.com/sorrycc/blog/issues/68
   es5ImcompatibleVersions: true,
   plugins: [
     [
-      "umi-plugin-react",
+      'umi-plugin-react',
       {
         antd: true,
-        dva: true,
+        dva: {
+          hmr: true,
+        },
         routes: {
           exclude: [
             /model\.(j|t)sx?$/,
             /service\.(j|t)sx?$/,
             /models\//,
             /components\//,
-            /services\//
-          ]
+            /services\//,
+          ],
         },
-        dll: {
-          exclude: [],
-          include: ["dva", "dva/router", "dva/saga", "dva/fetch", "antd/es"]
+        locale: {
+          enable: true, // default false
+          default: 'zh-CN', // default zh-CN
+          baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
         },
-        hardSource: /* isMac */ process.platform === "darwin"
-      }
-    ]
+        polyfills: ['ie9'],
+        ...(!process.env.TEST && require('os').platform() === 'darwin'
+          ? {
+              dll: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
+              hardSource: true,
+            }
+          : {}),
+      },
+    ],
   ],
-  // theme: "./theme.config.js",
+  theme: './src/config/theme.js',
   // 接口代理示例
   // proxy: {
   //   "/api/v1/test": {
@@ -36,26 +45,26 @@ export default {
   //   },
   // },
   sass: {
-    "node-sass": true
+    'node-sass': true,
   },
   alias: {
-    components: resolve(__dirname, "src/components/"),
-    utils: resolve(__dirname, "src/utils/"),
-    config: resolve(__dirname, "src/config/"),
-    services: resolve(__dirname, "src/services/"),
-    models: resolve(__dirname, "src/models/"),
-    styles: resolve(__dirname, "src/styles/"),
-    layouts: resolve(__dirname, "src/layouts/"),
-    assets: resolve(__dirname, "src/assets/"),
-    pages: resolve(__dirname, "src/pages/")
+    components: resolve(__dirname, 'src/components/'),
+    utils: resolve(__dirname, 'src/utils/'),
+    config: resolve(__dirname, 'src/config/'),
+    services: resolve(__dirname, 'src/services/'),
+    models: resolve(__dirname, 'src/models/'),
+    styles: resolve(__dirname, 'src/styles/'),
+    layouts: resolve(__dirname, 'src/layouts/'),
+    assets: resolve(__dirname, 'src/assets/'),
+    pages: resolve(__dirname, 'src/pages/'),
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
   chainWebpack(config) {
     config.module
-      .rule("svg")
+      .rule('svg')
       .test(/\.svg$/i)
-      .use("svg-sprite-loader")
-      .loader(require.resolve("svg-sprite-loader"));
-  }
+      .use('svg-sprite-loader')
+      .loader(require.resolve('svg-sprite-loader'));
+  },
 };
