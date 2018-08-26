@@ -20,7 +20,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0-rc.2",
-    "antd": "^3.8.2",
     "classnames": "^2.2.6",
     "enquire-js": "^0.2.1",
     "lodash.isequal": "^4.5.0",
@@ -31,8 +30,6 @@
     "rc-tween-one": "^2.2.3",
     "react-container-query": "^0.11.0",
     "react-intl": "^2.4.0",
-    "umi": "2.0.0-beta.18",
-    "umi-plugin-react": "1.0.0-beta.17",
     "url-polyfill": "^1.0.14"
   },
   "devDependencies": {
@@ -55,7 +52,9 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.3.0",
-    "svg-sprite-loader": "^3.9.2"
+    "svg-sprite-loader": "^3.9.2",
+    "umi": "2.0.0-beta.18",
+    "umi-plugin-react": "1.0.0-beta.17"
   },
   "optionalDependencies": {
     "puppeteer": "^1.7.0"

@@ -25,6 +25,7 @@ export default {
           default: 'zh-CN', // default zh-CN
           baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
         },
+        singular: true, // when singular is not true, use locales as the resources folder
         polyfills: ['ie9'],
         ...(!process.env.TEST && require('os').platform() === 'darwin'
           ? {
