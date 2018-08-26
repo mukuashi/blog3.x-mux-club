@@ -5,7 +5,7 @@
  * @Date:   2018-06-16 12:25:27
  * @version 0.1 | 2018-06-16 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-25 17:10:11
+ * @Last Modified time: 2018-08-26 01:22:49
 */
 import React from 'react';
 import { Layout, Menu } from 'antd';
@@ -14,14 +14,12 @@ import { ContainerQuery } from 'react-container-query';
 import memoizeOne from 'memoize-one';
 import { connect } from 'dva';
 import deepEqual from 'lodash.isequal';
-import { formatMessage } from 'umi/locale';
 import Link from 'umi/link';
 import pathToRegexp from 'path-to-regexp';
 import classNames from 'classnames';
 import Context from '../MenuContext';
 import systemData from 'config/system';
 import styles from './index.scss';
-
 /**
  * 获取面包屑映射
  * @param {Object} menuData 菜单配置
@@ -109,10 +107,7 @@ class BasicLayout extends React.PureComponent {
     if (!currRouterData) {
       return title;
     }
-    const message = formatMessage({
-      id: currRouterData.locale || currRouterData.name,
-      defaultMessage: currRouterData.name,
-    });
+    const message = currRouterData.locale || currRouterData.name;
     return `${message} - ${title}`;
   };
   componentDidMount() {
