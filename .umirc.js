@@ -3,6 +3,7 @@ import { resolve } from 'path';
 export default {
   // for query-string@6 https://github.com/sorrycc/blog/issues/68
   es5ImcompatibleVersions: true,
+  publicPath: '/',
   plugins: [
     [
       'umi-plugin-react',
@@ -58,6 +59,7 @@ export default {
     layouts: resolve(__dirname, 'src/layouts/'),
     assets: resolve(__dirname, 'src/assets/'),
     pages: resolve(__dirname, 'src/pages/'),
+    common: resolve(__dirname, 'src/common/'),
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,

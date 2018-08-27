@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
  * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-25 13:52:51
+ * @Last Modified time: 2018-08-27 23:27:02
 */
 /**
  * @date     2018-03-17
