@@ -8,11 +8,9 @@ import * as routerConfig from 'config/router';
 // Conversion router to menu.
 function formatter(data, parentPath = '') {
   return data.map(item => {
-    let locale = 'menu';
+    let locale = '';
     if (item.name) {
       locale = `${item.name}`;
-    } else if (item.name) {
-      locale = `menu.${item.name}`;
     }
     const result = {
       ...item,

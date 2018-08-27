@@ -5,16 +5,15 @@
  * @Date:   2018-06-16 12:25:27
  * @version 0.1 | 2018-06-16 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-26 01:22:49
+ * @Last Modified time: 2018-08-26 18:45:47
 */
-import React from 'react';
-import { Layout, Menu } from 'antd';
+import React, { PureComponent } from 'react';
+import { Layout, Spin } from 'antd';
 import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import memoizeOne from 'memoize-one';
 import { connect } from 'dva';
 import deepEqual from 'lodash.isequal';
-import Link from 'umi/link';
 import pathToRegexp from 'path-to-regexp';
 import classNames from 'classnames';
 import Context from '../MenuContext';
@@ -78,7 +77,7 @@ const classLayoutFooter = cx({
   'mux-layout-footer': true,
 });
 
-class BasicLayout extends React.PureComponent {
+class BasicLayout extends PureComponent {
   state = {
     rendering: true,
   };
@@ -106,9 +105,14 @@ class BasicLayout extends React.PureComponent {
     });
     if (!currRouterData) {
       return title;
+    } else {
+      const message = currRouterData.locale || currRouterData.name;
+      if (message) {
+        return `${message} - ${title}`;
+      } else {
+        return title;
+      }
     }
-    const message = currRouterData.locale || currRouterData.name;
-    return `${message} - ${title}`;
   };
   componentDidMount() {
     this.renderRef = requestAnimationFrame(() => {
@@ -128,22 +132,7 @@ class BasicLayout extends React.PureComponent {
     } = this.props;
     const layout = (
       <Layout className={classLayoutContainer}>
-        <Header className={classLayoutHeader}>
-          <div className="logo" />
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={['2']}
-            style={{ lineHeight: '64px' }}
-          >
-            <Menu.Item key="1">
-              <Link to="/">首页</Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Link to="/home">其他</Link>
-            </Menu.Item>
-          </Menu>
-        </Header>
+        <Header className={classLayoutHeader} />
         <Content className={classLayoutContent}>{children}</Content>
         <Footer className={classLayoutFooter}>Ant Design ©2016 Created by Ant UED</Footer>
       </Layout>
@@ -159,7 +148,7 @@ class BasicLayout extends React.PureComponent {
             )}
           </ContainerQuery>
         </DocumentTitle>
-        {this.state.rendering ? null : 'loading . . .'}
+        {this.state.rendering && <Spin />}
       </React.Fragment>
     );
   }
