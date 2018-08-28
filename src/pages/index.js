@@ -1,3 +1,12 @@
+/*
+ * Copyright (c) 2018-Now PhotoArtLife PD, All rights reseved.
+ * @fileoverview | 首页 - Home Component，Canvas + Animate
+ * @Author: mukuashi@PhotoArtLife | mukuashi@icloud.com
+ * @Date: 2016-01-18 17:19:07
+ * @version 0.1 | 2017-02-28 // Initial version.
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2018-08-29 01:49:21
+*/
 import { PureComponent } from 'react';
 import fireworks from 'utils/fireworks';
 import * as animate from 'utils/animate';
@@ -5,9 +14,6 @@ import './index.scss';
 
 export default class BrandPageComponent extends PureComponent {
   state = {};
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     const canvasDom = fireworks(document.querySelector('.fireworks'));
@@ -22,26 +28,27 @@ export default class BrandPageComponent extends PureComponent {
       false
     );
     window.addEventListener('resize', canvasDom.setCanvasSize(), false);
-    //
+    //logo动画
     const logoEl = document.querySelector('.logo-animation');
     const pathEls = document.querySelectorAll('.logo-animation path:not(.icon-curve)');
     animate.logoAnimation(logoEl, pathEls).init();
-    //
+    //功能按钮特效
     const buttonEls = document.querySelectorAll('.button');
     animate.createBouncyButtons(buttonEls);
   }
-  // componentWillUnmount() {
-  //   const canvasDom = fireworks(document.querySelector('.fireworks'));
-  //   window.removeEventListener('resize', canvasDom.setCanvasSize(), false);
-  // }
+
+  componentWillUnmount() {
+    const canvasDom = fireworks(document.querySelector('.fireworks'));
+    window.removeEventListener('resize', canvasDom.setCanvasSize(), false);
+  }
 
   render() {
     return (
-      <div className="home">
+      <article className="home">
         <canvas className="fireworks" />
-        <div className="logo-animation">
-          <div className="letters">
-            <div className="letter letter-a">
+        <section className="logo-animation">
+          <ul className="letters">
+            <li className="letter letter-a">
               <svg viewBox="0 0 162 162">
                 <g fill="none" fillRule="evenodd" stroke="#5E89FB">
                   <path
@@ -61,8 +68,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="letter letter-n">
+            </li>
+            <li className="letter letter-n">
               <svg viewBox="0 0 162 162">
                 <g fill="none" fillRule="evenodd" stroke="#FB155A">
                   <path className="fill in" strokeWidth="40" d="M21 161V1" />
@@ -85,8 +92,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="letter letter-i">
+            </li>
+            <li className="letter letter-i">
               <svg viewBox="0 0 82 162">
                 <g fill="none" fillRule="evenodd" stroke="#18FF92">
                   <path className="fill in" strokeWidth="40" d="M21 61v20a60 60 0 0 0 60 60" />
@@ -98,8 +105,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="letter letter-m-1">
+            </li>
+            <li className="letter letter-m-1">
               <svg viewBox="0 0 162 162">
                 <g fill="none" fillRule="evenodd" stroke="#5E89FB">
                   <path className="fill in" strokeWidth="40" d="M21 161V1" />
@@ -122,8 +129,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="letter letter-m-2">
+            </li>
+            <li className="letter letter-m-2">
               <svg viewBox="0 0 162 162">
                 <g fill="none" fillRule="evenodd" stroke="#FB155A">
                   <path
@@ -143,8 +150,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="letter letter-e">
+            </li>
+            <li className="letter letter-e">
               <svg viewBox="0 0 162 162">
                 <g fill="none" fillRule="evenodd" stroke="#18FF92">
                   <path
@@ -164,8 +171,8 @@ export default class BrandPageComponent extends PureComponent {
                   />
                 </g>
               </svg>
-            </div>
-            <div className="logo-icon">
+            </li>
+            <li className="logo-icon">
               <div className="icon">
                 <svg viewBox="0 0 62 62">
                   <g fill="none" fillRule="evenodd" strokeWidth="2" transform="translate(1 1)">
@@ -194,23 +201,23 @@ export default class BrandPageComponent extends PureComponent {
                   </g>
                 </svg>
               </div>
-            </div>
-            <div className="dot dot-i">
+            </li>
+            <li className="dot dot-i">
               <svg viewBox="0 0 42 42">
                 <g fill="none" fillRule="evenodd">
                   <rect width="40" height="40" x="1" y="1" fill="#17F28C" rx="20" />
                 </g>
               </svg>
-            </div>
-            <div className="dot dot-e">
+            </li>
+            <li className="dot dot-e">
               <svg viewBox="0 0 42 42">
                 <g fill="none" fillRule="evenodd">
                   <rect width="40" height="40" x="1" y="1" fill="#FFFFFF" rx="20" />
                 </g>
               </svg>
-            </div>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </section>
         <div className="info">
           <p className="description">Javascript Animation Engine</p>
           <div className="links">
@@ -244,7 +251,7 @@ export default class BrandPageComponent extends PureComponent {
             </a>
           </p>
         </div>
-      </div>
+      </article>
     );
   }
 }

@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-28 01:32:02
+ * @Last Modified time: 2018-08-29 01:14:13
 */
 import anime from 'animejs';
 //
@@ -211,7 +211,7 @@ const logoAnimation = (logoEl, pathEls) => {
     });
 
   function init() {
-    document.body.classList.add('ready');
+    document.querySelector('.home').classList.add('ready');
     // logoTimeline.seek(4700);
     logoTimeline.play();
   }

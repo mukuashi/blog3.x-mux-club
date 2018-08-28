@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-01-23 // Initial version.
  * @version 0.2 | 2018-08-10 // 基于React重构，ES6 Fireworks封装.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-28 00:42:07
+ * @Last Modified time: 2018-08-29 00:48:04
 */
 import anime from 'animejs';
 
@@ -80,7 +80,7 @@ const fireworks = canvasEl => {
   }
   function animateParticules(x, y) {
     const circle = createCircle(x, y);
-    const particules = [];
+    let particules = [];
     for (let i = 0; i < numberOfParticules; i++) {
       particules.push(createParticule(x, y));
     }

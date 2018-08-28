@@ -59,7 +59,6 @@ export default {
     layouts: resolve(__dirname, 'src/layouts/'),
     assets: resolve(__dirname, 'src/assets/'),
     pages: resolve(__dirname, 'src/pages/'),
-    common: resolve(__dirname, 'src/common/'),
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
