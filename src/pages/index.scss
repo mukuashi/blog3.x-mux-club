@@ -1,118 +1,53 @@
-:global {
-  .color-01 {
-    color: #ff1461;
-  } /* Red */
-  .color-02 {
-    color: #ff7c72;
-  } /* Orange */
-  .color-03 {
-    color: #fbf38c;
-  } /* Yellow */
-  .color-04 {
-    color: #a6ff8f;
-  } /* Citrus */
-  .color-05 {
-    color: #18ff92;
-  } /* Green */
-  .color-06 {
-    color: #1ce2b2;
-  } /* Darkgreen */
-  .color-07 {
-    color: #5ef3fb;
-  } /* Turquoise */
-  .color-08 {
-    color: #61c3ff;
-  } /* Lightblue */
-  .color-09 {
-    color: #5a87ff;
-  } /* Blue */
-  .color-10 {
-    color: #8453e3;
-  } /* Purple */
-  .color-11 {
-    color: #c26eff;
-  } /* Lavender */
-  .color-12 {
-    color: #fb89fb;
-  } /* Pink */
-  html {
-    overflow: hidden;
-  }
+@import '../styles/basics/theme';
+@import '../styles/basics/mixin';
 
-  body {
+//
+:global {
+  .home {
+    position: absolute;
+    overflow: hidden;
+    background: $default-home-background-color;
+    @include square(100%);
+    @include flex-center-middle;
+    @include flex-direction(column);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    text-transform: uppercase;
     opacity: 0;
     &.ready {
       opacity: 1;
     }
-  }
-  .home {
-    background-color: #111116; /* Black */
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 2px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
     .fireworks {
-      position: absolute;
-      top: 0;
-      left: 0;
-      widows: 100%;
-      height: 100%;
+      @include square(100%);
+      @include custom-position(absolute, $top: 0, $left: 0);
     }
     .logo-animation {
-      pointer-events: none;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
       width: 100%;
-      margin-top: -40px;
+      pointer-events: none;
+      @include flex-center-middle;
+      margin-top: -(rem(40px));
+      ul li {
+        @include ul-initialize;
+      }
       .letters {
         position: relative;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: 682px;
-        height: 162px;
+        @include flexbox;
+        width: 50%;
+        height: rem(162px);
       }
-
       .letter {
         position: relative;
         width: 162px;
         height: 162px;
-      }
-
-      .letter:not(:first-child) {
-        margin-left: -42px;
-      }
-
-      .letter-i {
-        z-index: 1;
-        width: 82px;
-        -webkit-transform-origin: 100% 50%;
-        transform-origin: 100% 50%;
+        &:not(:first-child) {
+          margin-left: -42px;
+        }
+        &-i {
+          z-index: 1;
+          width: 82px;
+          -webkit-transform-origin: 100% 50%;
+          transform-origin: 100% 50%;
+        }
       }
 
       .dot {
