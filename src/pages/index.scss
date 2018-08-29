@@ -34,69 +34,64 @@
         @include flexbox;
         width: 50%;
         height: rem(162px);
-      }
-      .letter {
-        position: relative;
-        width: 162px;
-        height: 162px;
-        &:not(:first-child) {
-          margin-left: -42px;
+        @include ul-initialize;
+        //
+        .letter {
+          position: relative;
+          @include square(rem(162px));
+          &:not(:first-child) {
+            margin-left: -42px;
+          }
+          &-i {
+            z-index: 1;
+            width: 82px;
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+          }
         }
-        &-i {
-          z-index: 1;
-          width: 82px;
-          -webkit-transform-origin: 100% 50%;
-          transform-origin: 100% 50%;
+        //
+        .dot {
+          position: absolute;
+          @include square(rem(42px));
+          @include prefix(transform, scale(0));
+          &-i {
+            top: 0;
+            left: 240px;
+          }
+          &-e {
+            bottom: 0;
+            right: 0;
+          }
         }
-      }
+        //
+        .logo-icon {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: absolute;
+          left: 230px;
+          top: -10px;
+          width: 222px;
+          height: 62px;
+        }
 
-      .dot {
-        position: absolute;
-        width: 42px;
-        height: 42px;
-        -webkit-transform: scale(0);
-        transform: scale(0);
-      }
-
-      .dot-i {
-        top: 0;
-        left: 240px;
-      }
-
-      .dot-e {
-        bottom: 0;
-        right: 0;
-      }
-
-      .logo-icon {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        position: absolute;
-        left: 230px;
-        top: -10px;
-        width: 222px;
-        height: 62px;
-      }
-
-      .icon {
-        width: 62px;
-        height: 62px;
-        opacity: 0;
-        cursor: pointer;
-      }
-
-      .icon-text {
-        position: absolute;
-        top: 60px;
-        left: 60px;
-        width: 160px;
-        height: 62px;
-      }
-
-      .icon-text path,
-      .icon-text polygon {
-        opacity: 0;
+        .icon {
+          width: 62px;
+          height: 62px;
+          opacity: 0;
+          cursor: pointer;
+          &-text {
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            width: 160px;
+            height: 62px;
+            path,
+            polygon {
+              opacity: 0;
+            }
+          }
+        }
       }
     }
     .info {
