@@ -5,7 +5,7 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-29 01:49:21
+ * @Last Modified time: 2018-08-30 02:42:06
 */
 import { PureComponent } from 'react';
 import fireworks from 'utils/fireworks';
@@ -218,7 +218,7 @@ export default class BrandPageComponent extends PureComponent {
             </li>
           </ul>
         </section>
-        <div className="info">
+        <footer className="info">
           <p className="description">Javascript Animation Engine</p>
           <div className="links">
             <a className="button blue" href="documentation" target="_blank">
@@ -250,7 +250,7 @@ export default class BrandPageComponent extends PureComponent {
               Julian Garnier
             </a>
           </p>
-        </div>
+        </footer>
       </article>
     );
   }
