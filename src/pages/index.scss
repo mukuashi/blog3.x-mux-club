@@ -1,6 +1,5 @@
 @import '../styles/basics/theme';
 @import '../styles/basics/mixin';
-
 //
 :global {
   .home {
@@ -65,16 +64,13 @@
         }
         //
         .logo-icon {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
+          @include flexbox;
           position: absolute;
           left: 230px;
           top: -10px;
           width: 222px;
           height: 62px;
         }
-
         .icon {
           width: 62px;
           height: 62px;

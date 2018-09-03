@@ -5,19 +5,18 @@
  * @Date:   2018-06-16 12:25:27
  * @version 0.1 | 2018-06-16 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-26 18:45:47
+ * @Last Modified time: 2018-09-04 01:31:48
 */
 import React, { PureComponent } from 'react';
 import { Layout, Spin } from 'antd';
 import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import memoizeOne from 'memoize-one';
-import { connect } from 'dva';
 import deepEqual from 'lodash.isequal';
 import pathToRegexp from 'path-to-regexp';
 import classNames from 'classnames';
 import Context from '../MenuContext';
-import systemData from 'config/system';
+import systemData from '@/config/data.config';
 import styles from './index.scss';
 /**
  * 获取面包屑映射
@@ -154,4 +153,4 @@ class BasicLayout extends PureComponent {
   }
 }
 
-export default connect(() => ({}))(BasicLayout);
+export default BasicLayout;

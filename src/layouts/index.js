@@ -1,9 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Spin } from 'antd';
-import { connect } from 'dva';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import BasicLayout from './BasicLayout';
-import * as routerConfig from 'config/router';
+import routerConfig from '@/config/router.config';
 
 // Conversion router to menu.
 function formatter(data, parentPath = '') {
@@ -35,7 +34,6 @@ class LoadingPage extends PureComponent {
   };
 
   componentDidMount() {
-    const { dispatch } = this.props;
     this.enquireHandler = enquireScreen(mobile => {
       const { isMobile } = this.state;
       if (isMobile !== mobile) {
@@ -45,7 +43,6 @@ class LoadingPage extends PureComponent {
       }
     });
     this.hideLoading();
-    // this.initSetting();
   }
   componentWillUnmount() {
     unenquireScreen(this.enquireHandler);
@@ -55,16 +52,6 @@ class LoadingPage extends PureComponent {
       loading: false,
     });
   }
-  /**
-   * get setting from url params
-   */
-  // initSetting() {
-  //   const { dispatch } = this.props;
-  //   dispatch({
-  //     type: 'setting/getSetting',
-  //   });
-  // }
-
   render() {
     const { loading, isMobile } = this.state;
     if (loading) {
@@ -94,4 +81,4 @@ class LoadingPage extends PureComponent {
   }
 }
 
-export default connect()(LoadingPage);
+export default LoadingPage;

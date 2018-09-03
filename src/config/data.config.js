@@ -7,10 +7,10 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-30 02:33:34
+ * @Last Modified time: 2018-09-04 00:48:31
 */
 // dev or online
-import { isProd, isMobile } from 'utils';
+import { isProd, isMobile } from '@/utils';
 
 // Date
 const nowYear = new Date().getFullYear();
@@ -22,7 +22,7 @@ const mePai = isMobile()
   : 'https://www.mepai.me/user/u_592e418fe4a53';
 
 export default {
-  prefix: 'mux',
+  prefix: 'blog3.x-mux-club',
   version: `${version}/`,
   title: `${version} mukuashi@PhotoArtLife Studio`,
   content: {},
