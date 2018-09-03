@@ -5,11 +5,11 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-30 02:42:06
+ * @Last Modified time: 2018-09-04 00:37:27
 */
 import { PureComponent } from 'react';
-import fireworks from 'utils/fireworks';
-import * as animate from 'utils/animate';
+import fireworks from '@/utils/fireworks';
+import * as animate from '@/utils/animate';
 import './index.scss';
 
 export default class BrandPageComponent extends PureComponent {
