@@ -4,8 +4,9 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@icloud.com
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
+ * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 02:10:47
+ * @Last Modified time: 2018-09-04 15:28:02
 */
 import { PureComponent } from 'react';
 import fireworks from '@/utils/fireworks';

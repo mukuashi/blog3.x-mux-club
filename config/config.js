@@ -52,7 +52,8 @@ export default {
   alias: {
     components: resolve(__dirname, 'src/components/'),
     utils: resolve(__dirname, 'src/utils/'),
-    config: resolve(__dirname, 'src/config/'),
+    config: resolve(__dirname, 'config/'),
+    locales: resolve(__dirname, 'src/locales/'),
     services: resolve(__dirname, 'src/services/'),
     models: resolve(__dirname, 'src/models/'),
     styles: resolve(__dirname, 'src/styles/'),

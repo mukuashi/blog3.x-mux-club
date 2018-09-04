@@ -5,7 +5,7 @@
  * @Date:   2018-06-16 12:25:27
  * @version 0.1 | 2018-06-16 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 01:31:48
+ * @Last Modified time: 2018-09-04 19:19:04
 */
 import React, { PureComponent } from 'react';
 import { Layout, Spin } from 'antd';
@@ -16,7 +16,7 @@ import deepEqual from 'lodash.isequal';
 import pathToRegexp from 'path-to-regexp';
 import classNames from 'classnames';
 import Context from '../MenuContext';
-import systemData from '@/config/data.config';
+import systemData from '@/locales/zh-CN';
 import styles from './index.scss';
 /**
  * 获取面包屑映射
