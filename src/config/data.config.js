@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 00:48:31
+ * @Last Modified time: 2018-09-04 02:02:56
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -27,6 +27,8 @@ export default {
   title: `${version} mukuashi@PhotoArtLife Studio`,
   content: {},
   footer: {
+    description:
+      'A Creator. Photographer、Independent Designer、Programmer/Software Engineer、Producer、Media/Novel Author etc.',
     logo: {
       img: '',
       content: '一只拍片码稿、画图写代码的创作者',

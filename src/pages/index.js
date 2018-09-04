@@ -5,13 +5,15 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 00:37:27
+ * @Last Modified time: 2018-09-04 02:10:47
 */
 import { PureComponent } from 'react';
 import fireworks from '@/utils/fireworks';
 import * as animate from '@/utils/animate';
+import systemData from '@/config/data.config';
 import './index.scss';
 
+const { footer } = systemData;
 export default class BrandPageComponent extends PureComponent {
   state = {};
 
@@ -218,8 +220,8 @@ export default class BrandPageComponent extends PureComponent {
             </li>
           </ul>
         </section>
-        <footer className="info">
-          <p className="description">Javascript Animation Engine</p>
+        <footer className="footer-info">
+          <p className="description">{footer.description}</p>
           <div className="links">
             <a className="button blue" href="documentation" target="_blank">
               <svg viewBox="0 0 180 60">
@@ -227,7 +229,7 @@ export default class BrandPageComponent extends PureComponent {
               </svg>
               <span>Documentation</span>
             </a>
-            <a className="button blue" href="https://codepen.io/collection/XLebem/" target="_blank">
+            <a className="button red" href="https://codepen.io/collection/XLebem/" target="_blank">
               <svg viewBox="0 0 180 60">
                 <path d="M10,10 C10,10 50,9.98999977 90,9.98999977 C130,9.98999977 170,10 170,10 C170,10 170.009995,20 170.009995,30 C170.009995,40 170,50 170,50 C170,50 130,50.0099983 90,50.0099983 C50,50.0099983 10,50 10,50 C10,50 9.98999977,40 9.98999977,30 C9.98999977,20 10,10 10,10 Z" />
               </svg>
