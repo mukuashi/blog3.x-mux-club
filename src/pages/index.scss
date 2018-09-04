@@ -11,7 +11,7 @@
     @include flex-direction(column);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     opacity: 0;
     &.ready {
       opacity: 1;
@@ -65,38 +65,34 @@
         //
         .logo-icon {
           @include flexbox;
-          position: absolute;
-          left: 230px;
-          top: -10px;
-          width: 222px;
-          height: 62px;
-        }
-        .icon {
-          width: 62px;
-          height: 62px;
-          opacity: 0;
-          cursor: pointer;
-          &-text {
-            position: absolute;
-            top: 60px;
-            left: 60px;
-            width: 160px;
-            height: 62px;
-            path,
-            polygon {
-              opacity: 0;
+          @include custom-position(absolute, $left: 230px, $top: -10px);
+          @include size(222px, 62px);
+          .icon {
+            @include square(62px);
+            opacity: 0;
+            cursor: pointer;
+            &-text {
+              @include custom-position(absolute, $top: 60px, $left: 60px);
+              @include size(160px, 62px);
+              path,
+              polygon {
+                opacity: 0;
+              }
             }
           }
         }
       }
     }
-    .info {
+    .footer-info {
       text-align: center;
-    }
-
-    .description {
-      opacity: 0;
-      margin-top: -20px;
+      .description {
+        opacity: 0;
+        margin-top: -1.428rem;
+        font-weight: lighter;
+        word-spacing: 2px;
+        color: $font-initialize-color;
+        font-size: $default-content-fz-sm;
+      }
     }
 
     .links {
