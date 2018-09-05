@@ -3,6 +3,7 @@ import { routerRedux } from 'dva/router';
 export default {
   namespace: 'global',
   state: {
+    collapsed: false,
     text: 'hello umi+dva',
     login: false,
   },
