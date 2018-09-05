@@ -1,6 +1,6 @@
 # 3.x Version Blog
-基于UmiJS的新尝试，引入服务端渲染SSR等，仍然保持React、Redux等技术栈。
-- React + Redux + dvajs + umijs等
+基于UmiJS的新尝试，引入服务端渲染SSR、构建和build config等，仍然保持React、Redux等技术栈。
+- React + Redux + DvaJS + UmiJS等
 - Preview： http://kquanr.com/3.x
 - 1.x：http://kquanr.com
 - 2.x：http://kquanr.com/2.x
