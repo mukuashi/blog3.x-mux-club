@@ -6,12 +6,12 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 15:28:02
+ * @Last Modified time: 2018-09-05 14:55:00
 */
 import { PureComponent } from 'react';
 import fireworks from '@/utils/fireworks';
 import * as animate from '@/utils/animate';
-import systemData from '@/config/data.config';
+import systemData from '@/locales/zh-CN';
 import './index.scss';
 
 const { footer } = systemData;

@@ -3,11 +3,12 @@ export default [
   {
     path: '/',
     component: '../layouts',
+    Routes: ['src/pages/index'],
     routes: [
-      // home
       {
-        path: '/',
-        redirect: '/',
+        path: '/Home',
+        name: 'Home',
+        component: '/Home',
       },
     ],
   },
