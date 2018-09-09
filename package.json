@@ -30,11 +30,11 @@
     "classnames": "^2.2.6",
     "enquire-js": "^0.2.1",
     "lodash.isequal": "^4.5.0",
-    "memoize-one": "^4.0.0",
-    "path-to-regexp": "^2.3.0",
+    "memoize-one": "^4.0.2",
+    "path-to-regexp": "^2.4.0",
     "prop-types": "^15.6.2",
-    "rc-texty": "^0.1.1",
-    "rc-tween-one": "^2.2.3",
+    "rc-texty": "^0.2.0",
+    "rc-tween-one": "^2.2.4",
     "react-container-query": "^0.11.0",
     "react-intl": "^2.4.0",
     "url-polyfill": "^1.0.14"
@@ -51,7 +51,6 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
-    "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.9.3",
     "prettier": "1.14.2",
     "react-document-title": "^2.0.3",
@@ -61,8 +60,8 @@
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.3.0",
     "svg-sprite-loader": "^3.9.2",
-    "umi": "2.0.0",
-    "umi-plugin-react": "1.0.0"
+    "umi": "2.0.3",
+    "umi-plugin-react": "1.0.3"
   },
   "optionalDependencies": {
     "puppeteer": "^1.7.0"

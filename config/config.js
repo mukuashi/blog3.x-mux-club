@@ -52,7 +52,6 @@ export default {
   alias: {
     components: resolve(__dirname, 'src/components/'),
     utils: resolve(__dirname, 'src/utils/'),
-    config: resolve(__dirname, 'config/'),
     locales: resolve(__dirname, 'src/locales/'),
     services: resolve(__dirname, 'src/services/'),
     models: resolve(__dirname, 'src/models/'),
@@ -63,31 +62,14 @@ export default {
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
-  cssLoaderOptions: {
-    modules: true,
-    getLocalIdent: (context, localIdentName, localName) => {
-      if (
-        context.resourcePath.includes('node_modules') ||
-        context.resourcePath.includes('global.scss')
-      ) {
-        return localName;
-      }
-      const match = context.resourcePath.match(/src(.*)/);
-      if (match && match[1]) {
-        const stylePath = match[1].replace('.scss', '');
-        const arr = stylePath
-          .split('/')
-          .map(a => a.replace(/([A-Z])/g, '-$1'))
-          .map(a => a.toLowerCase());
-        return `mux-club${arr.join('-')}-${localName}`.replace(/--/g, '-');
-      }
-      return localName;
-    },
-  },
+  disableDynamicImport: true,
+  disableCSSModules: false, // css modules
+  publicPath: `${defaultSettings.version}/`,
+  hash: true,
   manifest: {
     name: 'blog3.x-mux-club',
-    background_color: '#FFF',
-    description: 'mukuashi@PhotoArtLife Studio',
+    background_color: '#fff',
+    description: '3.x mukuashi@PhotoArtLife Studio',
     display: 'standalone',
     start_url: '/index.html',
     icons: [

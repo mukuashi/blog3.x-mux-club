@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-05 14:54:29
+ * @Last Modified time: 2018-09-09 19:30:08
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -24,7 +24,7 @@ import systemData from '@/locales/zh-CN';
 import Context from './MenuContext';
 import styles from './index.scss';
 
-const { version, title } = systemData;
+const { title } = systemData;
 
 const cx = classNames.bind(styles);
 const { Content, Header, Footer } = Layout;
@@ -66,7 +66,7 @@ function formatter(data, parentPath = '') {
       locale,
     };
     if (item.routes) {
-      const children = formatter(item.routes, `${parentPath}${item.path}/`, locale);
+      const children = formatter(item.routes, `${parentPath}${item.path}/`);
       // Reduce memory usage
       result.children = children;
     }
@@ -83,8 +83,6 @@ class BasicLayout extends PureComponent {
     this.breadcrumbNameMap = this.getBreadcrumbNameMap();
     this.state = {
       rendering: true,
-      isMobile: false,
-      fixHeader: false, // 置顶nav menu，初始化置顶透明背景，滚动一定高度时加fixHeader
     };
   }
 
@@ -95,14 +93,16 @@ class BasicLayout extends PureComponent {
       });
     });
     this.enquireHandler = enquireScreen(mobile => {
-      const { isMobile } = this.state;
-      if (isMobile !== mobile) {
-        this.setState({
-          isMobile: mobile,
+      const { ismobile, dispatch } = this.props;
+      if (ismobile !== mobile) {
+        dispatch({
+          type: 'global/update',
+          payload: {
+            ismobile: mobile || false,
+          },
         });
       }
     });
-    window.addEventListener('scroll', this.handleScrollCheck, false);
   }
 
   componentDidUpdate() {
@@ -113,8 +113,6 @@ class BasicLayout extends PureComponent {
     cancelAnimationFrame(this.renderRef);
     // 移动端uncheck
     unenquireScreen(this.enquireHandler);
-    // 滚屏header
-    window.removeEventListener('scroll', this.handleScrollCheck, false);
   }
 
   getContext() {
@@ -159,14 +157,11 @@ class BasicLayout extends PureComponent {
         currRouterData = this.breadcrumbNameMap[key];
       }
     });
-    if (!currRouterData) {
+    const message = currRouterData && (currRouterData.locale || currRouterData.name);
+    if (!message) {
       return title;
     }
-    if (currRouterData) {
-      const message = currRouterData.locale || currRouterData.name;
-      const newTitle = message ? `${message} - ${title}` : title;
-      return newTitle;
-    }
+    return `${message} - ${title}`;
   };
 
   getBashRedirect = () => {
@@ -184,28 +179,11 @@ class BasicLayout extends PureComponent {
     return redirect;
   };
 
-  // 滚屏与置顶菜单状态切换
-  handleScrollCheck = () => {
-    // 设置滚屏默认高度为90px,超过后将会切换导航栏
-    const DEFAULT_SCROLL_HEIGHT = 90;
-    const toggleHeader = value => {
-      setTimeout(() => {
-        this.setState({
-          fixHeader: value,
-        });
-      }, 5);
-    };
-    if (getScrollTop() > DEFAULT_SCROLL_HEIGHT) {
-      toggleHeader(true);
-    } else {
-      toggleHeader(false);
-    }
-  };
-
   //
   render() {
-    const { fixHeader, isMobile, rendering } = this.state;
+    const { rendering } = this.state;
     const {
+      ismobile,
       children,
       location: { pathname },
     } = this.props;
@@ -222,6 +200,7 @@ class BasicLayout extends PureComponent {
     const classLayoutFooter = cx({
       'mux-layout-footer': true,
     });
+
     const layout = (
       <Layout className={classLayoutContainer}>
         <Header className={classLayoutHeader} />
@@ -246,6 +225,6 @@ class BasicLayout extends PureComponent {
   }
 }
 
-export default connect(() => ({
-  collapsed: global.collapsed,
+export default connect(({ global }) => ({
+  ismobile: global.ismobile,
 }))(BasicLayout);
