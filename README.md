@@ -6,7 +6,7 @@
 - 2.x：http://kquanr.com/2.x
 - more...
 
-# Usage
+## Usage
 * UmiJS：https://umijs.org
 * DvaJS：https://dvajs.com
 * React：https://reactjs.org
@@ -26,12 +26,12 @@
 * 🍁 **完善的 TypeScript 支持**，包括 d.ts 定义和 umi test
 * 🌴 **与 dva 数据流的深入融合**，支持 duck directory、model 的自动加载、code splitting 等等
 
-# Guides
+## Guides
 - [airbnb javascript standard](https://github.com/airbnb/javascript)
 - [Ant Design introduce](https://ant.design/docs/spec/introduce-cn)
 - [JD Front-End Coding Guidelines](https://guide.aotu.io)
 
-# Structure
+## Structure
 ```
 ├── package.json       # 项目依赖包及scripts
 ├── config             # 全局配置入口 - UmiJS
@@ -51,7 +51,6 @@
 │ ├── /utils/          # 全局工具函数
 │ │──global.js         # 全局Index
 │ │──global.scss       # 全局Style
-```
 
 - Home(首页)
   - components => Header + content1 + content2 + ... + Footer
@@ -60,7 +59,7 @@
 
 ```
 
-# Usage
+## Usage
 
 ```bash
 #本地开发
