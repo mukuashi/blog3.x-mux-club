@@ -1,14 +1,16 @@
+import defaultSettings from './settings.config';
+
 export default [
   // app
   {
-    path: '/',
+    path: defaultSettings.version,
     component: '../layouts',
     Routes: ['src/pages/index'],
     routes: [
       {
-        path: '/Home',
-        name: 'Home',
-        component: '/Home',
+        path: `${defaultSettings.version}/media`,
+        name: 'Media',
+        component: './Media',
       },
     ],
   },

@@ -1,35 +1,38 @@
-import { routerRedux } from 'dva/router';
-
+/*
+ * Copyright (c) 2016-Now PhotoArtLife PD, All rights reseved.
+ * @fileoverview | 系统公共Model层
+ * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
+ * @Date:   2018-03-23 12:25:27
+ * @version 0.1 | 2018-03-23  // Initial version.
+ * @Last Modified by: mukuashi
+ * @Last Modified time: 2018-09-08 16:27:44
+*/
 export default {
   namespace: 'global',
+  // 初始化state
   state: {
-    collapsed: false,
-    text: 'hello umi+dva',
-    login: false,
+    ismobile: false,
   },
+  // 增删改查显隐切换等纯函数
   reducers: {
-    setText(state) {
+    update(state, { payload }) {
       return {
         ...state,
-        text: 'setted',
-      };
-    },
-    signin(state) {
-      return {
-        ...state,
-        login: true,
+        ...payload,
       };
     },
   },
+  // 异步，同步写法，Generator函数
   effects: {
-    *login(action, { call, put }) {
-      yield put({
-        type: 'signin',
-      });
-      yield put(routerRedux.push('/admin'));
+    *fetch({ payload }, { call, put }) {
+      // eslint-disable-line
+      yield put({ type: 'save' });
     },
-    *throwError() {
-      throw new Error('hi error');
+  },
+  // 初始化或监听data
+  subscriptions: {
+    setup({ dispatch, history }) {
+      // eslint-disable-line
     },
   },
 };
