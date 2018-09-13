@@ -7,24 +7,23 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-04 19:16:42
+ * @Last Modified time: 2018-09-13 12:02:12
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
-
-// Date
+import defaultSettings from '../../config/settings.config';
+// Date、version...
 const nowYear = new Date().getFullYear();
-const version = '3.x';
-
+const version = `${defaultSettings.version.replace('/', '')}/`;
 // Media
 const mePai = isMobile()
   ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html'
   : 'https://www.mepai.me/user/u_592e418fe4a53';
-
+//
 export default {
-  prefix: 'blog3.x-mux-club',
-  version: `${version}/`,
-  title: `${version} mukuashi@PhotoArtLife Studio`,
+  prefix: defaultSettings.prefix,
+  version: `${version}`,
+  title: defaultSettings.title,
   content: {},
   footer: {
     description:
