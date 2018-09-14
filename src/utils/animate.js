@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-29 01:14:13
+ * @Last Modified time: 2018-09-14 02:12:14
 */
 import anime from 'animejs';
 //
@@ -174,7 +174,7 @@ const logoAnimation = (logoEl, pathEls) => {
       offset: 0,
     })
     .add({
-      targets: ['.logo-animation', '.description', '.button', '.credits'],
+      targets: ['.home-logo-animation', '.description', '.button', '.credits'],
       translateY: [50, 0],
       scale: 1,
       opacity: 1,

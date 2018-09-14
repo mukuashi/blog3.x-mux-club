@@ -5,8 +5,12 @@ export default [
   {
     path: defaultSettings.version,
     component: '../layouts',
-    Routes: ['src/pages/index'],
     routes: [
+      {
+        path: defaultSettings.version,
+        name: '',
+        component: './Home',
+      },
       {
         path: `${defaultSettings.version}/media`,
         name: 'Media',
