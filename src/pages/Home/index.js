@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 16:09:40
+ * @Last Modified time: 2018-09-16 02:03:40
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
@@ -297,7 +297,7 @@ export default class BrandPageComponent extends PureComponent {
         </section>
         <footer className="home-footer-info">
           <Texty
-            delay={500}
+            delay={5000}
             mode="smooth"
             enter={this.getEnter}
             leave={this.getEnter}
@@ -306,34 +306,16 @@ export default class BrandPageComponent extends PureComponent {
             {footer.description}
           </Texty>
           <ul className="links">
-            <li>
-              <Link to="/1.x" className="navigation blue">
-                <svg viewBox="0 0 180 60">
-                  <path d="M10,10 C10,10 50,9.98999977 90,9.98999977 C130,9.98999977 170,10 170,10 C170,10 170.009995,20 170.009995,30 C170.009995,40 170,50 170,50 C170,50 130,50.0099983 90,50.0099983 C50,50.0099983 10,50 10,50 C10,50 9.98999977,40 9.98999977,30 C9.98999977,20 10,10 10,10 Z" />
-                </svg>
-                <span>1.x</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/2.x" className="navigation red">
-                <svg viewBox="0 0 180 60">
-                  <path d="M10,10 C10,10 50,9.98999977 90,9.98999977 C130,9.98999977 170,10 170,10 C170,10 170.009995,20 170.009995,30 C170.009995,40 170,50 170,50 C170,50 130,50.0099983 90,50.0099983 C50,50.0099983 10,50 10,50 C10,50 9.98999977,40 9.98999977,30 C9.98999977,20 10,10 10,10 Z" />
-                </svg>
-                <span>2.x</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="https://github.com/PhotoArtLife/blog3.x-mux-club"
-                className="navigation green"
-                target="_blank"
-              >
-                <svg viewBox="0 0 180 60">
-                  <path d="M10,10 C10,10 50,9.98999977 90,9.98999977 C130,9.98999977 170,10 170,10 C170,10 170.009995,20 170.009995,30 C170.009995,40 170,50 170,50 C170,50 130,50.0099983 90,50.0099983 C50,50.0099983 10,50 10,50 C10,50 9.98999977,40 9.98999977,30 C9.98999977,20 10,10 10,10 Z" />
-                </svg>
-                <span>GitHub</span>
-              </Link>
-            </li>
+            {footer.mains.buttons.map(row => (
+              <li key={row.id}>
+                <a href={row.path} className={row.color + ' navigation'} target={row.target}>
+                  <svg viewBox="0 0 180 60">
+                    <path d={footer.mains.btnSvgPath} />
+                  </svg>
+                  <span>{row.name}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </footer>
       </article>

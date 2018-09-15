@@ -6,7 +6,7 @@
     opacity: 0;
     color: $font-minor-color;
     text-align: center;
-    @include custom-position(relative, $bottom: 1rem);
+    @include custom-position(relative, $bottom: 0.68rem);
     > a {
       color: currentColor;
       color: rgba($font-initialize-color, 0.8);
@@ -28,8 +28,26 @@
       }
     }
     a,
-    span {
+    em {
       transition: color 0.75s ease;
+    }
+    em {
+      font-style: normal;
+      padding-right: 0.3rem;
+    }
+    .texty-inline {
+      display: inline;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  :global {
+    .copyright {
+      font-size: 0.96rem;
+      .texty-inline {
+        display: inline-block;
+      }
     }
   }
 }

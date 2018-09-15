@@ -3,6 +3,8 @@
 //
 :global {
   .home {
+    position: absolute;
+    overflow: hidden;
     background: $default-home-background-color;
     @include size(100%, 100vh);
     @include flex-center-middle;
@@ -146,8 +148,7 @@
       .links {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
+        @include prefix(flex-direction, row);
       }
     }
   }

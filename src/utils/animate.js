@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 16:53:20
+ * @Last Modified time: 2018-09-16 02:24:38
 */
 import anime from 'animejs';
 import defaultSettings from '../../config/settings.config';
@@ -187,7 +187,7 @@ const logoAnimation = (logoEl, pathEls) => {
     .add({
       targets: '.version',
       innerHTML: parseFloat(version, 10),
-      duration: 3000,
+      duration: 2800,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {
@@ -205,7 +205,7 @@ const logoAnimation = (logoEl, pathEls) => {
         return d.getFullYear();
       },
       round: 1,
-      duration: 2500,
+      duration: 2800,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       complete: a => a.animatables[0].target.classList.remove('highlighted'),
