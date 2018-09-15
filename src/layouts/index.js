@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-13 12:03:15
+ * @Last Modified time: 2018-09-15 21:39:02
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -19,6 +19,7 @@ import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import pathToRegexp from 'path-to-regexp';
+import GlobalFooter from './GlobalFooter';
 import { getScrollTop } from '@/utils';
 import systemData from '@/locales/zh-CN';
 import Context from './MenuContext';
@@ -205,7 +206,9 @@ class BasicLayout extends PureComponent {
       <Layout className={classLayoutContainer}>
         <Header className={classLayoutHeader} />
         <Content className={classLayoutContent}>{children}</Content>
-        <Footer className={classLayoutFooter}>Ant Design ©2016 Created by Ant UED</Footer>
+        <Footer className={classLayoutFooter}>
+          <GlobalFooter />
+        </Footer>
       </Layout>
     );
 

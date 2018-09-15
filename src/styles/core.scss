@@ -4,14 +4,13 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2016-04-18 11:25:27
  * @version 0.1 | 2016-04-18 // Initial version.
- * @version 0.2 | 2017-06-18 // 配置一些浏览器默认，暂时保留normalize选择.
+ * @version 0.2 | 2017-06-18 // merge css.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-14 02:25:03
+ * @Last Modified time: 2018-09-15 21:47:02
 */
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
 @import 'mixin', 'iconfont';
-@import '~rc-texty/assets/index.css';
 //base core
 html {
   //IE盒子
@@ -19,18 +18,21 @@ html {
 }
 body {
   width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: auto;
+  overflow-x: hidden;
 }
 //core
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   @include prefix(box-sizing, $box-sizing);
   font-size: $font-size-base;
   font-family: $font-family-default;
   //default background
-  background: $default-background-theme;
+  background: $default-home-background-color;
   //页面里的字体变清晰
   -webkit-font-smoothing: antialiased;
   //点击高亮hidden，偏移动端

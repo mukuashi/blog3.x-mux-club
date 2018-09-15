@@ -5,9 +5,10 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-14 02:12:14
+ * @Last Modified time: 2018-09-15 16:53:20
 */
 import anime from 'animejs';
+import defaultSettings from '../../config/settings.config';
 //
 const createBouncyButtons = buttonEls => {
   function createButton(el) {
@@ -56,6 +57,7 @@ const createBouncyButtons = buttonEls => {
 const logoAnimation = (logoEl, pathEls) => {
   const innerWidth = window.innerWidth;
   const maxWidth = 740;
+  const version = defaultSettings.version.replace('/', '') || '3.x';
   const logoTimeline = anime.timeline({ autoplay: false });
   let logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 
@@ -174,7 +176,7 @@ const logoAnimation = (logoEl, pathEls) => {
       offset: 0,
     })
     .add({
-      targets: ['.home-logo-animation', '.description', '.button', '.credits'],
+      targets: ['.home-logo-animation', '.description', '.navigation', '.copyright'],
       translateY: [50, 0],
       scale: 1,
       opacity: 1,
@@ -184,8 +186,8 @@ const logoAnimation = (logoEl, pathEls) => {
     })
     .add({
       targets: '.version',
-      innerHTML: parseFloat(anime.version, 10),
-      duration: 2500,
+      innerHTML: parseFloat(version, 10),
+      duration: 3000,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {

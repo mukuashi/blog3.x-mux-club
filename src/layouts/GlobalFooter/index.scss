@@ -1,0 +1,35 @@
+@import '../../styles/theme';
+@import '../../styles/mixin';
+
+:global {
+  .copyright {
+    opacity: 0;
+    color: $font-minor-color;
+    text-align: center;
+    @include custom-position(relative, $bottom: 1rem);
+    > a {
+      color: currentColor;
+      color: rgba($font-initialize-color, 0.8);
+      &::after {
+        content: '';
+        opacity: 0;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        border-bottom: 1px solid currentColor;
+        transition: opacity 0.75s ease;
+      }
+      &:hover,
+      .highlighted {
+        color: $primary-color;
+        transition: color 0.25s ease;
+      }
+    }
+    a,
+    span {
+      transition: color 0.75s ease;
+    }
+  }
+}
