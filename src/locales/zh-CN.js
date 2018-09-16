@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 03:12:55
+ * @Last Modified time: 2018-09-16 12:40:03
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -44,7 +44,7 @@ export default {
         },
         {
           id: 2,
-          path: 'https://github.com/PhotoArtLife/blog3.x-mux-club',
+          path: '//github.com/PhotoArtLife/blog3.x-mux-club',
           name: 'GitHub',
           target: '_blank',
           color: 'green',

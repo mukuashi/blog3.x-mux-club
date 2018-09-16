@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 03:12:12
+ * @Last Modified time: 2018-09-16 12:24:15
 */
 import React, { PureComponent } from 'react';
 import { Icon } from 'antd';
@@ -37,7 +37,7 @@ export default class GlobalFooter extends PureComponent {
               { x: 100, delay: 500, duration: 450 },
               {
                 ease: 'easeOutQuart',
-                duration: 300,
+                duration: 4000,
                 x: 0,
               },
               {
@@ -45,7 +45,7 @@ export default class GlobalFooter extends PureComponent {
                 delay: -300,
                 scale: 0.9,
                 ease: 'easeInOutQuint',
-                duration: 1000,
+                duration: 5000,
               },
               { scale: 1, width: '100%', delay: -300, duration: 1000, ease: 'easeInOutQuint' },
             ],
@@ -62,14 +62,12 @@ export default class GlobalFooter extends PureComponent {
           Referenced By
         </Texty>
         <Link to="//reactjs.org" target="_blank">
-          {' '}
-          Facebook React{' '}
+          Facebook React
         </Link>
-        <Texty delay={6000} type="scaleBig" mode="reverse" className="texty-inline">
+        <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
           | Powered By
         </Texty>
         <Link to="//photoartlife.lofter.com" target="_blank">
-          {' '}
           MUX Studio
         </Link>
       </footer>

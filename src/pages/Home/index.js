@@ -6,11 +6,12 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 02:03:40
+ * @Last Modified time: 2018-09-16 19:58:37
 */
 import React, { PureComponent } from 'react';
 import Link from 'umi/link';
 import Texty from 'rc-texty';
+import TweenOne from 'rc-tween-one';
 import fireworks from '@/utils/fireworks';
 import * as animate from '@/utils/animate';
 import systemData from '@/locales/zh-CN';
@@ -131,7 +132,7 @@ export default class BrandPageComponent extends PureComponent {
                   <path
                     className="fill in"
                     strokeWidth="40"
-                    d="M101 141H81a60 60 0 1 1 0-120c33.14 0 59 26.86 60 60v80"
+                    d="64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96"
                   />
                   <path
                     className="fill out"
@@ -249,15 +250,12 @@ export default class BrandPageComponent extends PureComponent {
                 </g>
               </svg>
             </li>
+            {/* Logo Canvas */}
             <li className="logo-icon">
               <div className="icon">
                 <svg viewBox="0 0 62 62">
                   <g fill="none" fillRule="evenodd" strokeWidth="2" transform="translate(1 1)">
-                    <path
-                      className="icon-curve"
-                      stroke="#FF1554"
-                      d="M0 16a80.88 80.88 0 0 1 44 44"
-                    />
+                    <path class="icon-curve" stroke="#FF1554" d="M0 16a80.88 80.88 0 0 1 44 44" />
                     <path
                       className="icon-line"
                       stroke="#5E89FB"
@@ -268,15 +266,40 @@ export default class BrandPageComponent extends PureComponent {
                 </svg>
               </div>
               <div className="icon-text">
-                <svg viewBox="0 0 160 62">
-                  <g fill="#FBF3FB" fillRule="evenodd">
-                    <path d="M27.33 18h1.73l10.15 25.7h-1.69l-3.24-8.24H21.97l-3.28 8.24H17L27.33 18zm6.45 16.1l-5.51-14.55h-.07l-5.73 14.54h11.3z" />
-                    <polygon points="51.334 18 53.314 18 69.55 41.58 69.622 41.58 69.622 18 71.206 18 71.206 43.704 69.334 43.704 52.99 19.944 52.918 19.944 52.918 43.704 51.334 43.704" />
-                    <polygon points="86.027 18 87.611 18 87.611 43.704 86.027 43.704" />
-                    <polygon points="102.433 18 104.701 18 114.745 41.94 114.817 41.94 124.753 18 127.021 18 127.021 43.704 125.437 43.704 125.437 19.944 125.365 19.944 115.573 43.704 113.989 43.704 104.089 19.944 104.017 19.944 104.017 43.704 102.433 43.704" />
-                    <polygon points="141.843 18 159.123 18 159.123 19.368 143.427 19.368 143.427 29.664 158.187 29.664 158.187 31.032 143.427 31.032 143.427 42.336 159.303 42.336 159.303 43.704 141.843 43.704" />
-                  </g>
-                </svg>
+                <Texty
+                  type="bounce"
+                  mode="smooth"
+                  delay={4500}
+                  component={TweenOne}
+                  componentProps={{
+                    animation: [
+                      { x: 160, type: 'set' },
+                      { x: 100, delay: 4000, duration: 2000 },
+                      {
+                        ease: 'easeOutQuart',
+                        duration: 4000,
+                        x: 0,
+                      },
+                      {
+                        letterSpacing: 0,
+                        delay: -500,
+                        rotateX: 360,
+                        scale: 0.85,
+                        ease: 'easeInOutQuint',
+                        duration: 3000,
+                      },
+                      {
+                        scale: 1,
+                        width: '100%',
+                        delay: -300,
+                        duration: 3000,
+                        ease: 'easeInOutQuint',
+                      },
+                    ],
+                  }}
+                >
+                  PhotoArtLife
+                </Texty>
               </div>
             </li>
             <li className="dot dot-i">
@@ -308,12 +331,12 @@ export default class BrandPageComponent extends PureComponent {
           <ul className="links">
             {footer.mains.buttons.map(row => (
               <li key={row.id}>
-                <a href={row.path} className={row.color + ' navigation'} target={row.target}>
+                <Link to={row.path} className={row.color + ' navigation'} target={row.target}>
                   <svg viewBox="0 0 180 60">
                     <path d={footer.mains.btnSvgPath} />
                   </svg>
                   <span>{row.name}</span>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
