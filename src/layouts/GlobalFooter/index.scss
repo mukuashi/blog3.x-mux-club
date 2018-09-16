@@ -6,7 +6,7 @@
     opacity: 0;
     color: $font-minor-color;
     text-align: center;
-    @include custom-position(relative, $bottom: 0.68rem);
+    @include custom-position(relative, $bottom: 0.35rem);
     > a {
       color: currentColor;
       color: rgba($font-initialize-color, 0.8);

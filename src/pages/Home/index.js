@@ -6,10 +6,10 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 19:58:37
+ * @Last Modified time: 2018-09-17 02:16:42
 */
 import React, { PureComponent } from 'react';
-import Link from 'umi/link';
+import { connect } from 'dva';
 import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
 import fireworks from '@/utils/fireworks';
@@ -18,7 +18,8 @@ import systemData from '@/locales/zh-CN';
 import './index.scss';
 
 const { footer } = systemData;
-export default class BrandPageComponent extends PureComponent {
+
+class HomePageComponent extends PureComponent {
   state = {};
 
   componentDidMount() {
@@ -121,6 +122,7 @@ export default class BrandPageComponent extends PureComponent {
   };
 
   render() {
+    const { language } = this.props;
     return (
       <article className="home">
         <canvas className="fireworks" />
@@ -255,7 +257,11 @@ export default class BrandPageComponent extends PureComponent {
               <div className="icon">
                 <svg viewBox="0 0 62 62">
                   <g fill="none" fillRule="evenodd" strokeWidth="2" transform="translate(1 1)">
-                    <path class="icon-curve" stroke="#FF1554" d="M0 16a80.88 80.88 0 0 1 44 44" />
+                    <path
+                      className="icon-curve"
+                      stroke="#FF1554"
+                      d="M0 16a80.88 80.88 0 0 1 44 44"
+                    />
                     <path
                       className="icon-line"
                       stroke="#5E89FB"
@@ -284,7 +290,7 @@ export default class BrandPageComponent extends PureComponent {
                         letterSpacing: 0,
                         delay: -500,
                         rotateX: 360,
-                        scale: 0.85,
+                        scale: 1.05,
                         ease: 'easeInOutQuint',
                         duration: 3000,
                       },
@@ -319,24 +325,18 @@ export default class BrandPageComponent extends PureComponent {
           </ul>
         </section>
         <footer className="home-footer-info">
-          <Texty
-            delay={5000}
-            mode="smooth"
-            enter={this.getEnter}
-            leave={this.getEnter}
-            className="description"
-          >
-            {footer.description}
+          <Texty delay={5000} mode="smooth" enter={this.getEnter} className="description">
+            {language ? footer.description.English : footer.description.Chinese}
           </Texty>
           <ul className="links">
             {footer.mains.buttons.map(row => (
               <li key={row.id}>
-                <Link to={row.path} className={row.color + ' navigation'} target={row.target}>
+                <a href={row.path} className={row.color + ' navigation'} target={row.target}>
                   <svg viewBox="0 0 180 60">
                     <path d={footer.mains.btnSvgPath} />
                   </svg>
                   <span>{row.name}</span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
@@ -345,3 +345,7 @@ export default class BrandPageComponent extends PureComponent {
     );
   }
 }
+
+export default connect(({ global }) => ({
+  language: global.language,
+}))(HomePageComponent);
