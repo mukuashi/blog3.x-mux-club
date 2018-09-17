@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 21:39:02
+ * @Last Modified time: 2018-09-17 01:01:21
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -19,6 +19,7 @@ import DocumentTitle from 'react-document-title';
 import { ContainerQuery } from 'react-container-query';
 import { enquireScreen, unenquireScreen } from 'enquire-js';
 import pathToRegexp from 'path-to-regexp';
+import GlobalHeader from './GlobalHeader';
 import GlobalFooter from './GlobalFooter';
 import { getScrollTop } from '@/utils';
 import systemData from '@/locales/zh-CN';
@@ -185,6 +186,7 @@ class BasicLayout extends PureComponent {
     const { rendering } = this.state;
     const {
       ismobile,
+      language,
       children,
       location: { pathname },
     } = this.props;
@@ -204,7 +206,9 @@ class BasicLayout extends PureComponent {
 
     const layout = (
       <Layout className={classLayoutContainer}>
-        <Header className={classLayoutHeader} />
+        <Header className={classLayoutHeader}>
+          <GlobalHeader language={language} />
+        </Header>
         <Content className={classLayoutContent}>{children}</Content>
         <Footer className={classLayoutFooter}>
           <GlobalFooter />
@@ -230,4 +234,5 @@ class BasicLayout extends PureComponent {
 
 export default connect(({ global }) => ({
   ismobile: global.ismobile,
+  language: global.language,
 }))(BasicLayout);

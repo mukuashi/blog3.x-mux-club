@@ -4,14 +4,17 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2018-03-23 12:25:27
  * @version 0.1 | 2018-03-23  // Initial version.
+ * @version 0.2 | 2018-09-01  // add language select.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-08 16:27:44
+ * @Last Modified time: 2018-09-17 01:45:31
 */
 export default {
   namespace: 'global',
   // 初始化state
   state: {
     ismobile: false,
+    //language初始化为English -> true
+    language: true,
   },
   // 增删改查显隐切换等纯函数
   reducers: {

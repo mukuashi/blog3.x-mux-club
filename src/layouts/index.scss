@@ -9,8 +9,8 @@
     &-header {
       padding: 0;
       margin: 0;
+      line-height: 3.6;
       background: transparent;
-      display: none;
       @include square(0);
     }
     &-content {

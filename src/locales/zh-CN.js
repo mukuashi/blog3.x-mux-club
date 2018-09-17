@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 03:12:55
+ * @Last Modified time: 2018-09-17 02:09:54
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -26,8 +26,12 @@ export default {
   title: defaultSettings.title,
   content: {},
   footer: {
-    description:
-      'A Creator | Photographer、Independent Designer、Programmer/Software Engineer、Producer、Media/Novel Author etc.',
+    description: {
+      Chinese:
+        '一个创作者，MUX Studio创始人 | 独立设计师、自由摄影师、程序猿/软件工程师、制片人、自媒体/公路作者等.',
+      English:
+        'A Creator，MUX Studio Founder | Independent Designer、Photographer、Programmer/Software Engineer、Producer、Media/Novel Author etc.',
+    },
     mains: {
       buttons: [
         {
@@ -44,7 +48,7 @@ export default {
         },
         {
           id: 2,
-          path: 'https://github.com/PhotoArtLife/blog3.x-mux-club',
+          path: '//github.com/PhotoArtLife/blog3.x-mux-club',
           name: 'GitHub',
           target: '_blank',
           color: 'green',

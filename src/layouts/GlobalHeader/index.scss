@@ -1,0 +1,14 @@
+@import '../../styles/theme';
+@import '../../styles/mixin';
+
+.header {
+  @include custom-position(absolute, $top: 0, $right: 0.8rem, $zindex: $default-nav-zindex);
+  > button {
+    font-size: 95%;
+  }
+}
+
+@media (max-width: 640px) {
+  :global {
+  }
+}

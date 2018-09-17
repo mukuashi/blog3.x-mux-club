@@ -6,7 +6,7 @@
  * @version 0.1 | 2016-04-18 // Initial version.
  * @version 0.2 | 2017-06-18 // merge css.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-15 21:47:02
+ * @Last Modified time: 2018-09-16 12:40:26
 */
 // Some best-practice CSS that's useful for most apps
 // Just remove them if they're not what you want
@@ -22,6 +22,9 @@ body {
   position: absolute;
   overflow: auto;
   overflow-x: hidden;
+}
+#root {
+  overflow: hidden;
 }
 //core
 html,
