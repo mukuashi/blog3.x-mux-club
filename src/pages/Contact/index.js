@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-19 01:38:49
+ * @Last Modified time: 2018-09-18 23:56:54
 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -122,7 +122,7 @@ class HomePageComponent extends PureComponent {
   };
 
   render() {
-    const { language, interaction, ismobile } = this.props.global;
+    const { language } = this.props;
     return (
       <article className="home">
         <canvas className="fireworks" />
@@ -325,14 +325,7 @@ class HomePageComponent extends PureComponent {
           </ul>
         </section>
         <footer className="home-footer-info">
-          <Texty
-            delay={interaction ? 0 : 5000}
-            mode="smooth"
-            enter={this.getEnter}
-            leave={this.getEnter}
-            className={language ? 'description' : 'description description-chinese'}
-            style={ismobile ? { maxHeight: 84 } : { maxWidth: 1120 }}
-          >
+          <Texty mode="smooth" enter={this.getEnter} className="description">
             {language ? footer.description.English : footer.description.Chinese}
           </Texty>
           <ul className="links">

@@ -12,9 +12,9 @@ export default [
         component: './Home',
       },
       {
-        path: `${defaultSettings.version}/media`,
-        name: 'Media',
-        component: './Media',
+        path: `${defaultSettings.version}/contact`,
+        name: 'Contact',
+        component: './Contact',
       },
     ],
   },
