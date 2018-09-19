@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-17 01:46:38
+ * @Last Modified time: 2018-09-19 00:10:16
 */
 import React, { PureComponent } from 'react';
 import { Button } from 'antd';
@@ -19,21 +19,23 @@ class GlobalHeader extends PureComponent {
   static defaultProps = {
     className: 'header',
   };
-  handleChangeLanguage = () => {
-    const { dispatch, language } = this.props;
+  handleChangeLanguage() {
+    const { dispatch, global } = this.props;
+    const { language, interaction } = global;
     dispatch({
       type: 'global/update',
       payload: {
         language: !language,
+        interaction: interaction + 1,
       },
     });
-  };
+  }
 
   render() {
-    const { language } = this.props;
+    const { language } = this.props.global;
     return (
       <header className={styles.header}>
-        <Button ghost size="small" type="primary" onClick={this.handleChangeLanguage}>
+        <Button ghost size="small" type="primary" onClick={() => this.handleChangeLanguage()}>
           {language ? '中文' : 'English'}
         </Button>
       </header>
@@ -41,6 +43,4 @@ class GlobalHeader extends PureComponent {
   }
 }
 
-export default connect(({ global }) => ({
-  language: global.language,
-}))(GlobalHeader);
+export default connect(({ global }) => ({ global }))(GlobalHeader);

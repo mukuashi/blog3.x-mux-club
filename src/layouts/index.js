@@ -7,7 +7,7 @@
  * @version 0.2 | 2018-04-11 // fix chrome切换到移动端报错未销毁事件bug.
  * @version 0.3 | 2018-09-02 // update staging into umi.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-17 01:01:21
+ * @Last Modified time: 2018-09-19 00:08:33
 */
 import React, { PureComponent } from 'react';
 import { Layout } from 'antd';
@@ -234,5 +234,4 @@ class BasicLayout extends PureComponent {
 
 export default connect(({ global }) => ({
   ismobile: global.ismobile,
-  language: global.language,
 }))(BasicLayout);
