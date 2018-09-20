@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-17 02:09:54
+ * @Last Modified time: 2018-09-21 01:39:08
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -58,8 +58,14 @@ export default {
         'M10,10 C10,10 50,9.98999977 90,9.98999977 C130,9.98999977 170,10 170,10 C170,10 170.009995,20 170.009995,30 C170.009995,40 170,50 170,50 C170,50 130,50.0099983 90,50.0099983 C50,50.0099983 10,50 10,50 C10,50 9.98999977,40 9.98999977,30 C9.98999977,20 10,10 10,10 Z',
     },
     copyright: {
-      number: '鲁ICP备15022927号 ',
-      reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+      Chinese: {
+        number: '鲁ICP备15022927号',
+        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+      },
+      English: {
+        number: 'China ICP Network Security No.15022927',
+        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+      },
     },
   },
 };
