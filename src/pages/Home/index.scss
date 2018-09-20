@@ -93,8 +93,8 @@
       text-align: center;
       .description {
         opacity: 0;
-        margin-top: -1.428rem;
-        padding: 0.5rem 1.6rem 0.75rem;
+        padding: 0 1.6rem;
+        height: rem(50px);
         font-weight: lighter;
         word-spacing: 2px;
         color: $font-minor-color;

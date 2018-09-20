@@ -5,10 +5,10 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 12:24:15
+ * @Last Modified time: 2018-09-21 01:49:49
 */
 import React, { PureComponent } from 'react';
-import { Icon } from 'antd';
+import { connect } from 'dva';
 import Link from 'umi/link';
 import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
@@ -17,17 +17,17 @@ import './index.scss';
 
 const { footer } = systemData;
 
-export default class GlobalFooter extends PureComponent {
+class GlobalFooter extends PureComponent {
   static defaultProps = {
     className: 'footer',
   };
 
   render() {
-    const props = { ...this.props };
+    const { language, ismobile } = this.props.global;
     return (
       <footer className="copyright">
         <Texty
-          delay={5000}
+          delay={1000}
           type="right"
           mode="smooth"
           component={TweenOne}
@@ -51,9 +51,11 @@ export default class GlobalFooter extends PureComponent {
             ],
           }}
         >
-          {footer.copyright.number + 'All Rights Reserved.'}
+          {language
+            ? `${footer.copyright.English.number} All Rights Reserved.`
+            : `${footer.copyright.Chinese.number} All Rights Reserved.`}
         </Texty>
-        版本v
+        {language ? 'Version v' : '版本v'}
         <em className="version">0.0</em>
         Copyright © 2015-
         <em className="date">2015</em>
@@ -74,3 +76,5 @@ export default class GlobalFooter extends PureComponent {
     );
   }
 }
+
+export default connect(({ global }) => ({ global }))(GlobalFooter);

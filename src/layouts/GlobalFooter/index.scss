@@ -6,7 +6,17 @@
     opacity: 0;
     color: $font-minor-color;
     text-align: center;
+    padding: 0 1rem;
     @include custom-position(relative, $bottom: 0.35rem);
+    > div.texty {
+      &:first-of-type {
+        margin: 0 auto;
+        //height: 1.5rem;
+        text-align: center;
+        //max-width: 420px;
+      }
+    }
+
     > a {
       color: currentColor;
       color: rgba($font-initialize-color, 0.8);
@@ -45,10 +55,17 @@
 @media (max-width: 640px) {
   :global {
     .copyright {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       .texty-inline {
         display: inline-block;
       }
+    }
+  }
+}
+@media (max-width: 360px) {
+  :global {
+    .copyright {
+      font-size: 0.8rem;
     }
   }
 }
