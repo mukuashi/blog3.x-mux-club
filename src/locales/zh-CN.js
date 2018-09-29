@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-21 01:39:08
+ * @Last Modified time: 2018-09-22 23:02:26
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -63,7 +63,7 @@ export default {
         reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
       },
       English: {
-        number: 'China ICP Network Security No.15022927',
+        number: 'ICP Network No.15022927',
         reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
       },
     },

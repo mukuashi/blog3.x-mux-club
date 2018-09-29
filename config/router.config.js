@@ -3,16 +3,16 @@ import defaultSettings from './settings.config';
 export default [
   // app
   {
-    path: defaultSettings.version,
+    path: '',
     component: '../layouts',
     routes: [
       {
-        path: defaultSettings.version,
+        path: '',
         name: '',
         component: './Home',
       },
       {
-        path: `${defaultSettings.version}/contact`,
+        path: `contact`,
         name: 'Contact',
         component: './Contact',
       },

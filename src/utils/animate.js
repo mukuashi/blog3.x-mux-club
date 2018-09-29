@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-16 02:24:38
+ * @Last Modified time: 2018-09-29 00:10:40
 */
 import anime from 'animejs';
 import defaultSettings from '../../config/settings.config';
@@ -65,22 +65,19 @@ const logoAnimation = (logoEl, pathEls) => {
   for (let row of pathEls) {
     row.setAttribute('stroke-dashoffset', anime.setDashoffset(row));
   }
+  //const path = anime.path('#motionPath path');
 
   logoTimeline
-    .add({
-      targets: '.dot-e',
-      translateX: [
-        { value: -600, duration: 520, delay: 200, easing: 'easeInQuart' },
-        { value: [-100, 0], duration: 500, delay: 1000, easing: 'easeOutQuart' },
-      ],
-      scale: [
-        { value: [0, 1], duration: 200, easing: 'easeOutBack' },
-        { value: 0, duration: 20, delay: 500, easing: 'easeInQuart' },
-        { value: 1, duration: 200, delay: 1000, easing: 'easeOutQuart' },
-        { value: 0, duration: 400, delay: 500, easing: 'easeInBack' },
-      ],
-      offset: 0,
-    })
+    // .add({
+    //   targets: '#motionPath .el',
+    //   translateX: path('x'),
+    //   translateY: path('y'),
+    //   rotate: path('angle'),
+    //   easing: 'linear',
+    //   duration: 2000,
+    //   delay: 1200,
+    //   loop: 1,
+    // })
     .add({
       targets: '.dot-i',
       translateY: { value: [-200, 0], duration: 500, elasticity: 400 },
@@ -89,56 +86,6 @@ const logoAnimation = (logoEl, pathEls) => {
         { value: 0, duration: 400, delay: 1400, easing: 'easeInBack' },
       ],
       delay: 1200,
-      offset: 0,
-    })
-    .add({
-      targets: '.fill.in',
-      strokeDashoffset: {
-        value: [anime.setDashoffset, 0],
-        duration: 600,
-        delay: (el, i, t) => 700 + i * 100,
-        easing: 'easeOutQuart',
-      },
-      stroke: {
-        value: ['#FFF', el => anime.getValue(el.parentNode, 'stroke')],
-        duration: 500,
-        delay: 500,
-        easing: 'easeInQuad',
-      },
-      opacity: {
-        value: 0,
-        duration: 1,
-        delay: (el, i, t) => 1900 + i * 80,
-      },
-      offset: 0,
-    })
-    .add({
-      targets: '.fill.out',
-      strokeDashoffset: [
-        { value: [anime.setDashoffset, anime.setDashoffset], duration: 1890 },
-        {
-          value: [0, anime.setDashoffset],
-          duration: 800,
-          delay: (el, i) => i * 80,
-          easing: 'easeInQuart',
-        },
-      ],
-      offset: 0,
-    })
-    .add({
-      targets: '.line.out',
-      strokeDashoffset: {
-        value: [0, anime.setDashoffset],
-        duration: 1200,
-        delay: (el, i, t) => 2500 + i * 100,
-        easing: 'easeInQuart',
-      },
-      strokeWidth: {
-        value: [0, 2],
-        delay: (el, i, t) => 2000 + i * 100,
-        duration: 200,
-        easing: 'linear',
-      },
       offset: 0,
     })
     .add({
@@ -187,7 +134,7 @@ const logoAnimation = (logoEl, pathEls) => {
     .add({
       targets: '.version',
       innerHTML: parseFloat(version, 10),
-      duration: 2800,
+      duration: 3200,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {

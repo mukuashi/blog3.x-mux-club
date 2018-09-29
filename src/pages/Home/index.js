@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-21 01:27:37
+ * @Last Modified time: 2018-09-23 18:28:37
 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -128,131 +128,16 @@ class HomePageComponent extends PureComponent {
         <canvas className="fireworks" />
         <section className="home-logo-animation">
           <ul className="letters">
-            <li className="letter letter-a">
-              <svg viewBox="0 0 162 162">
-                <g fill="none" fillRule="evenodd" stroke="#5E89FB">
-                  <path
-                    className="fill in"
-                    strokeWidth="40"
-                    d="M64 128 8.574 96 8.574 32 64 0 119.426 32 119.426 96"
-                  />
-                  <path
-                    className="fill out"
-                    strokeWidth="40"
-                    d="M141 161V81c-1-33.14-26.86-60-60-60a60 60 0 1 0 0 120h20"
-                  />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M121 161V81.33C120.18 58.59 102.7 41 81 41a40 40 0 1 0 0 80h20v40H81A80 80 0 1 1 81 1c43.8 0 78.66 35.27 80 79.7V161h-40z"
-                  />
-                </g>
-              </svg>
-            </li>
-            <li className="letter letter-n">
-              <svg viewBox="0 0 162 162">
-                <g fill="none" fillRule="evenodd" stroke="#FB155A">
-                  <path className="fill in" strokeWidth="40" d="M21 161V1" />
-                  <path className="fill out" strokeWidth="40" d="M21 1v160" />
-                  <path
-                    className="fill in"
-                    strokeWidth="40"
-                    d="M21 161V81c1-33.14 26.86-60 60-60a60 60 0 0 1 60 60v80"
-                  />
-                  <path
-                    className="fill out"
-                    strokeWidth="40"
-                    d="M141 161V81a60 60 0 0 0-60-60c-33.14 0-59 26.86-60 60v80"
-                  />
-                  <path className="line out" strokeWidth="2" d="M41 161V1H1v160h40z" />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M1 161V80.4C2.35 36.27 37.2 1 81 1a80 80 0 0 1 80 80v80h-40V81a40 40 0 0 0-40-40c-21.7 0-39.18 17.59-40 40.33V161H1z"
-                  />
-                </g>
-              </svg>
-            </li>
-            <li className="letter letter-i">
-              <svg viewBox="0 0 82 162">
-                <g fill="none" fillRule="evenodd" stroke="#18FF92">
-                  <path className="fill in" strokeWidth="40" d="M21 61v20a60 60 0 0 0 60 60" />
-                  <path className="fill out" strokeWidth="40" d="M81 141a60 60 0 0 1-60-60V61" />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M81 121a40 40 0 0 1-40-40V61H1v20a80 80 0 0 0 80 80v-40z"
-                  />
-                </g>
-              </svg>
-            </li>
-            <li className="letter letter-m-1">
-              <svg viewBox="0 0 162 162">
-                <g fill="none" fillRule="evenodd" stroke="#5E89FB">
-                  <path className="fill in" strokeWidth="40" d="M21 161V1" />
-                  <path className="fill out" strokeWidth="40" d="M21 1v160" />
-                  <path
-                    className="fill in"
-                    strokeWidth="40"
-                    d="M21 161V81c1-33.14 26.86-60 60-60a60 60 0 0 1 60 60v80"
-                  />
-                  <path
-                    className="fill out"
-                    strokeWidth="40"
-                    d="M141 161V81a60 60 0 0 0-60-60c-33.14 0-59 26.86-60 60v80"
-                  />
-                  <path className="line out" strokeWidth="2" d="M41 161V1H1v160h40z" />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M1 161V80.4C2.35 36.27 37.2 1 81 1a80 80 0 0 1 80 80v80h-40V81a40 40 0 0 0-40-40c-21.7 0-39.18 17.59-40 40.33V161H1z"
-                  />
-                </g>
-              </svg>
-            </li>
-            <li className="letter letter-m-2">
-              <svg viewBox="0 0 162 162">
-                <g fill="none" fillRule="evenodd" stroke="#FB155A">
-                  <path
-                    className="fill in"
-                    strokeWidth="40"
-                    d="M21 161V81c1-33.14 26.86-60 60-60a60 60 0 0 1 60 60v80"
-                  />
-                  <path
-                    className="fill out"
-                    strokeWidth="40"
-                    d="M141 161V81a60 60 0 0 0-60-60c-33.14 0-59 26.86-60 60v80"
-                  />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M1 161V80.4C2.35 36.27 37.2 1 81 1a80 80 0 0 1 80 80v80h-40V81a40 40 0 0 0-40-40c-21.7 0-39.18 17.59-40 40.33V161H1z"
-                  />
-                </g>
-              </svg>
-            </li>
-            <li className="letter letter-e">
-              <svg viewBox="0 0 162 162">
-                <g fill="none" fillRule="evenodd" stroke="#18FF92">
-                  <path
-                    className="fill in"
-                    strokeWidth="40"
-                    d="M81 101h60V81c-1-33.14-26.86-60-60-60a60 60 0 1 0 0 120"
-                  />
-                  <path
-                    className="fill out"
-                    strokeWidth="40"
-                    d="M81 141a60 60 0 1 1 0-120c33.14 0 59 26.86 60 60v20H81"
-                  />
-                  <path
-                    className="line out"
-                    strokeWidth="2"
-                    d="M81 81v40h80V80.7C159.66 36.27 124.8 1 81 1a80 80 0 1 0 0 160v-40a40 40 0 1 1 0-80c21.6 0 39.01 17.42 39.99 40H81z"
-                  />
-                </g>
-              </svg>
-            </li>
             {/* Logo Canvas */}
+
+            <li className="dot dot-i">
+              <svg viewBox="0 0 42 42">
+                <g fill="none" fillRule="evenodd">
+                  <rect width="40" height="40" x="1" y="1" fill="#17F28C" rx="20" />
+                </g>
+              </svg>
+            </li>
+
             <li className="logo-icon">
               <div className="icon">
                 <svg viewBox="0 0 62 62">
@@ -308,20 +193,15 @@ class HomePageComponent extends PureComponent {
                 </Texty>
               </div>
             </li>
-            <li className="dot dot-i">
-              <svg viewBox="0 0 42 42">
-                <g fill="none" fillRule="evenodd">
-                  <rect width="40" height="40" x="1" y="1" fill="#17F28C" rx="20" />
-                </g>
+
+            {/*
+            <li id="motionPath" className="motion-path">
+              <div className="small square el follow-path"></div>
+                <svg width="256" height="112" viewBox="0 0 256 112">
+                  <path fill="none" stroke="#FFF" d="M8,56 C8,33.90861 25.90861,16 48,16 C70.09139,16 88,33.90861 88,56 C88,78.09139 105.90861,92 128,92 C150.09139,92 160,72 160,56 C160,40 148,24 128,24 C108,24 96,40 96,56 C96,72 105.90861,92 128,92 C154,93 168,78 168,56 C168,33.90861 185.90861,16 208,16 C230.09139,16 248,33.90861 248,56 C248,78.09139 230.09139,96 208,96 L48,96 C25.90861,96 8,78.09139 8,56 Z"/>
               </svg>
             </li>
-            <li className="dot dot-e">
-              <svg viewBox="0 0 42 42">
-                <g fill="none" fillRule="evenodd">
-                  <rect width="40" height="40" x="1" y="1" fill="#FFFFFF" rx="20" />
-                </g>
-              </svg>
-            </li>
+            */}
           </ul>
         </section>
         <footer className="home-footer-info">
