@@ -52,8 +52,8 @@ class GlobalFooter extends PureComponent {
           }}
         >
           {language
-            ? `${footer.copyright.English.number} All Rights Reserved.`
-            : `${footer.copyright.Chinese.number} All Rights Reserved.`}
+            ? `${footer.copyright.English.number} All Rights Reserved`
+            : `${footer.copyright.Chinese.number} All Rights Reserved`}
         </Texty>
         {language ? 'Version v' : '版本v'}
         <em className="version">0.0</em>

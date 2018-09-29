@@ -60,8 +60,8 @@
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.3.0",
     "svg-sprite-loader": "^3.9.2",
-    "umi": "2.0.3",
-    "umi-plugin-react": "1.0.3"
+    "umi": "2.1.1",
+    "umi-plugin-react": "1.1.1"
   },
   "optionalDependencies": {
     "puppeteer": "^1.7.0"

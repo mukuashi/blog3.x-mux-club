@@ -11,9 +11,10 @@
     > div.texty {
       &:first-of-type {
         margin: 0 auto;
-        //height: 1.5rem;
+        height: 1.4rem;
+        line-height: 1.4rem;
         text-align: center;
-        //max-width: 420px;
+        max-width: 310px;
       }
     }
 
