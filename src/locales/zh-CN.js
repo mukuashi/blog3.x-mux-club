@@ -36,7 +36,7 @@ export default {
       buttons: [
         {
           id: 0,
-          path: '/',
+          path: '/1.x',
           name: '1.x',
           color: 'blue',
         },
