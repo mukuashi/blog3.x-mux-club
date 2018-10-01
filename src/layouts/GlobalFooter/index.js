@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-21 01:49:49
+ * @Last Modified time: 2018-10-01 12:49:00
 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -55,10 +55,10 @@ class GlobalFooter extends PureComponent {
             ? `${footer.copyright.English.number} All Rights Reserved`
             : `${footer.copyright.Chinese.number} All Rights Reserved`}
         </Texty>
-        {language ? 'Version v' : '版本v'}
+        {language ? 'Version ' : '版本'}
         <em className="version">0.0</em>
         Copyright © 2015-
-        <em className="date">2015</em>
+        <em className="date">0</em>
         <em>mukuashi, Inc.</em>
         <Texty delay={5000} type="swing" mode="smooth" className="texty-inline">
           Referenced By
@@ -69,7 +69,7 @@ class GlobalFooter extends PureComponent {
         <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
           | Powered By
         </Texty>
-        <Link to="//photoartlife.lofter.com" target="_blank">
+        <Link className="team" to="//photoartlife.lofter.com" target="_blank">
           MUX Studio
         </Link>
       </footer>

@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-29 00:10:40
+ * @Last Modified time: 2018-10-01 13:42:01
 */
 import anime from 'animejs';
 import defaultSettings from '../../config/settings.config';
@@ -92,7 +92,7 @@ const logoAnimation = (logoEl, pathEls) => {
       targets: '.icon',
       opacity: { value: 1, duration: 10, delay: 2800, easing: 'linear' },
       translateY: { value: 60, duration: 800 },
-      delay: 4200,
+      delay: 4000,
       offset: 0,
     })
     .add({
@@ -132,9 +132,22 @@ const logoAnimation = (logoEl, pathEls) => {
       offset: '-=250',
     })
     .add({
+      targets: '.date',
+      innerHTML: () => {
+        const d = new Date();
+        return d.getFullYear();
+      },
+      round: 1,
+      duration: 4000,
+      easing: 'easeOutCubic',
+      begin: a => a.animatables[0].target.classList.add('highlighted'),
+      complete: a => a.animatables[0].target.classList.remove('highlighted'),
+      offset: '-=2000',
+    })
+    .add({
       targets: '.version',
       innerHTML: parseFloat(version, 10),
-      duration: 3200,
+      duration: 8000,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {
@@ -146,17 +159,41 @@ const logoAnimation = (logoEl, pathEls) => {
       offset: '-=500',
     })
     .add({
-      targets: '.date',
-      innerHTML: () => {
-        const d = new Date();
-        return d.getFullYear();
+      targets: '.icon',
+      rotate: {
+        value: 360,
+        duration: 1800,
+        easing: 'easeInOutSine',
       },
-      round: 1,
-      duration: 2800,
-      easing: 'easeOutCubic',
-      begin: a => a.animatables[0].target.classList.add('highlighted'),
-      complete: a => a.animatables[0].target.classList.remove('highlighted'),
-      offset: '-=2000',
+      scale: {
+        value: 0.001,
+        duration: 2500,
+        delay: 800,
+        easing: 'easeInOutQuart',
+      },
+      translateX: {
+        value: 0,
+        duration: 800,
+      },
+    })
+    .add({
+      targets: '.avatar',
+      opacity: { value: 1, duration: 100, delay: 0, easing: 'linear' },
+      translateX: {
+        value: '100vw',
+        duration: 4000,
+      },
+      rotate: {
+        value: 360,
+        duration: 4000,
+        easing: 'easeInOutSine',
+      },
+      scale: {
+        value: 2,
+        duration: 4000,
+        delay: 100,
+        easing: 'easeInOutQuart',
+      },
     });
 
   function init() {

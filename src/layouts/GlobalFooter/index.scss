@@ -42,6 +42,15 @@
     a,
     em {
       transition: color 0.75s ease;
+      &.version {
+        color: $color-09;
+      }
+      &.date {
+        color: $color-01;
+      }
+      &.team {
+        color: $color-06;
+      }
     }
     em {
       font-style: normal;

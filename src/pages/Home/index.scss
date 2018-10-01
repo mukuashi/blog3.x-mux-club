@@ -85,6 +85,13 @@
               }
             }
           }
+          // avatar
+          .avatar {
+            opacity: 0;
+            box-shadow: 1px 0 1px fade($dark-color, 10%);
+            border-radius: 100%;
+            @include custom-position(absolute, $left: -100vw, $top: 5.3rem);
+          }
         }
         //
         .motion-path {
