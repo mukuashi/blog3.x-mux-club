@@ -6,9 +6,10 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-09-23 18:28:37
+ * @Last Modified time: 2018-10-01 13:11:19
 */
 import React, { PureComponent } from 'react';
+import { Avatar } from 'antd';
 import { connect } from 'dva';
 import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
@@ -155,6 +156,9 @@ class HomePageComponent extends PureComponent {
                     <rect width="40" height="40" x="10" y="10" stroke="#18FF92" rx="20" />
                   </g>
                 </svg>
+              </div>
+              <div className="avatar">
+                <Avatar src="//kquanr.com/images/header-avatar.png" />
               </div>
               <div className="icon-text">
                 <Texty
