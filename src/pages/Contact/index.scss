@@ -1,175 +1,62 @@
-@import '../../styles/theme';
 @import '../../styles/mixin';
 //
 :global {
-  .home {
-    position: absolute;
+  .messages {
+    overflow: auto;
+    width: 100vw;
+    max-height: 100vh;
+    padding: 1rem 0.9rem;
+  }
+  .bubble {
     overflow: hidden;
-    background: $default-home-background-color;
-    @include size(100%, 100vh);
-    @include flex-center-middle;
-    @include flex-direction(column);
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    //text-transform: uppercase;
+    display: inline-block;
+    margin: 0 0 0.125rem 0;
+    padding: 0.5rem 0.85rem;
+    line-height: 1.25rem;
+    border-radius: 1.25rem;
+    transform-origin: 0 100%;
+    vertical-align: middle;
+    transition: border-radius 0.25s ease-out 0.075s;
+  }
+  .bubble.left.cornered {
+    border-bottom-left-radius: 0;
+  }
+  .bubble.left {
+    background: rgba(206, 206, 206, 0.5);
+  }
+  .bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    //background-image: url(../../assets/svgs/corner.svg);
+    background-size: 0.5rem 0.5rem;
+    background-position: 0.5rem 0;
+    background-repeat: no-repeat;
+    transition: background-position 0.15s ease-in;
+  }
+  .bubble.cornered:after {
+    background-position: 0 0;
+  }
+  .bubble span {
+    display: block;
+  }
+  .bubble span.message {
     opacity: 0;
-    &.ready {
-      opacity: 1;
-    }
-    .fireworks {
-      @include square(100%);
-      @include custom-position(absolute, $top: 0, $left: 0);
-    }
-    &-logo-animation {
-      width: 100%;
-      pointer-events: none;
-      @include flex-center-middle;
-      ul li {
-        @include ul-initialize;
-      }
-      .letters {
-        position: relative;
-        @include flexbox;
-        width: rem(682px);
-        height: rem(162px);
-        @include ul-initialize;
-        //
-        .letter {
-          position: relative;
-          @include square(rem(162px));
-          &:not(:first-child) {
-            margin-left: -42px;
-          }
-          &-i {
-            z-index: 1;
-            width: 82px;
-            -webkit-transform-origin: 100% 50%;
-            transform-origin: 100% 50%;
-          }
-        }
-        //
-        .dot {
-          position: absolute;
-          @include square(rem(42px));
-          @include prefix(transform, scale(0));
-          &-i {
-            top: 0;
-            left: 240px;
-          }
-          &-e {
-            bottom: 0;
-            right: 0;
-          }
-        }
-        //
-        .logo-icon {
-          @include flexbox;
-          @include custom-position(absolute, $left: 230px, $top: -10px);
-          @include size(330px, 62px);
-          .icon {
-            @include square(62px);
-            opacity: 0;
-            cursor: pointer;
-            &-text {
-              color: rgba($font-initialize-color, 0.8);
-              text-shadow: 0px 2px 2px rgba($font-initialize-color, 0.12);
-              //background:linear-gradient(left,#5e89fb,#ff1461,#18f38c);
-              font-size: 2.8rem;
-              line-height: 62px;
-              @include custom-position(absolute, $top: 60px, $left: 72px, $right: 10px);
-              .texty span {
-                padding-right: 2px;
-              }
-              path,
-              polygon {
-                opacity: 0;
-              }
-            }
-          }
-        }
-      }
-    }
-    &-footer-info {
-      text-align: center;
-      .description {
-        opacity: 0;
-        margin-top: -1.428rem;
-        padding: 0 1.6rem;
-        font-weight: lighter;
-        word-spacing: 2px;
-        color: $font-minor-color;
-        font-size: 1.1rem;
-      }
-      .links {
-        @include ul-initialize;
-        @include flex-center-middle;
-        @include prefix(flex-direction, column);
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        padding: 1.3rem 0;
-        li {
-          @include ul-initialize;
-          padding: 0 1rem;
-          > a {
-            opacity: 0;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            @include prefix(flex-direction, column);
-            @include flex-center-middle;
-            @include size(180px, 60px);
-          }
-          .blue {
-            color: #5e89fb;
-          }
-          .red {
-            color: #ff1461;
-          }
-          .green {
-            color: #18f38c;
-            svg {
-              @include prefix(transform, rotate(180deg));
-            }
-          }
-          svg {
-            stroke-width: 1;
-            fill: none;
-            fill-rule: evenodd;
-            stroke: currentColor;
-            @include custom-position(absolute, $top: 0, $left: 0, $right: 0, $bottom: 0);
-          }
-          path {
-            scale: 0.9;
-            transform-origin: 50% 50%;
-          }
-        }
-      }
-    }
   }
-}
-
-@media (min-width: 700px) {
-  :global {
-    .home {
-      .links {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        @include prefix(flex-direction, row);
-      }
-    }
+  .bubble a {
+    color: #0076ff;
   }
-}
-@media (max-width: 640px) {
-  :global {
-    .home {
-      &-logo-animation > .letters > .logo-icon {
-        .icon {
-          &-text {
-            font-size: 1.75rem;
-          }
-        }
-      }
-    }
+  .bubble .loading {
+    position: absolute;
+    width: 2.25rem;
+    font-size: 2rem;
+    line-height: 1rem;
+  }
+  .bubble .loading b {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
   }
 }

@@ -7,12 +7,12 @@ export default [
     component: '../layouts',
     routes: [
       {
-        path: '',
+        path: '/',
         name: '',
         component: './Home',
       },
       {
-        path: `contact`,
+        path: `/contact`,
         name: 'Contact',
         component: './Contact',
       },
