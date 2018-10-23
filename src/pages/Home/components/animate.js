@@ -5,10 +5,10 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-01 13:42:01
+ * @Last Modified time: 2018-10-24 01:07:11
 */
 import anime from 'animejs';
-import defaultSettings from '../../config/settings.config';
+import defaultSettings from '../../../../config/settings.config';
 //
 const createBouncyButtons = buttonEls => {
   function createButton(el) {
@@ -147,7 +147,7 @@ const logoAnimation = (logoEl, pathEls) => {
     .add({
       targets: '.version',
       innerHTML: parseFloat(version, 10),
-      duration: 8000,
+      duration: 7000,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {
@@ -168,7 +168,6 @@ const logoAnimation = (logoEl, pathEls) => {
       scale: {
         value: 0.001,
         duration: 2500,
-        delay: 800,
         easing: 'easeInOutQuart',
       },
       translateX: {
@@ -191,7 +190,6 @@ const logoAnimation = (logoEl, pathEls) => {
       scale: {
         value: 2,
         duration: 4000,
-        delay: 100,
         easing: 'easeInOutQuart',
       },
     });

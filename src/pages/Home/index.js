@@ -6,15 +6,15 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-01 13:11:19
+ * @Last Modified time: 2018-10-24 01:06:08
 */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
 import { connect } from 'dva';
 import Texty from 'rc-texty';
 import TweenOne from 'rc-tween-one';
-import fireworks from '@/utils/fireworks';
-import * as animate from '@/utils/animate';
+import fireworks from './components/fireworks';
+import * as animate from './components/animate';
 import systemData from '@/locales/zh-CN';
 import './index.scss';
 
@@ -130,7 +130,6 @@ class HomePageComponent extends PureComponent {
         <section className="home-logo-animation">
           <ul className="letters">
             {/* Logo Canvas */}
-
             <li className="dot dot-i">
               <svg viewBox="0 0 42 42">
                 <g fill="none" fillRule="evenodd">
@@ -138,7 +137,6 @@ class HomePageComponent extends PureComponent {
                 </g>
               </svg>
             </li>
-
             <li className="logo-icon">
               <div className="icon">
                 <svg viewBox="0 0 62 62">
