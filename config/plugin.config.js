@@ -1,8 +1,8 @@
-// Change theme plugin
+//webpack plugin
 export default config => {
   config.module
-    .rule('svg')
-    .test(/\.svg$/i)
-    .use('svg-sprite-loader')
-    .loader(require.resolve('svg-sprite-loader'));
+    .rule('svg-with-file')
+    .test(/.svg$/)
+    .use('svg-with-file-loader')
+    .loader('file-loader');
 };

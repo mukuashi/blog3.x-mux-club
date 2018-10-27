@@ -59,9 +59,9 @@
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.3.0",
-    "svg-sprite-loader": "^3.9.2",
-    "umi": "2.1.1",
-    "umi-plugin-react": "1.1.1"
+    "svg-sprite-loader": "^4.1.2",
+    "umi": "2.2.1",
+    "umi-plugin-react": "1.2.0"
   },
   "optionalDependencies": {
     "puppeteer": "^1.7.0"

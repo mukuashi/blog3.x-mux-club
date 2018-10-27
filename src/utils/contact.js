@@ -5,7 +5,7 @@
  * @Date:  2018-09-1012:25:27
  * @version 0.1 | 2018-09-10 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-24 01:17:41
+ * @Last Modified time: 2018-10-27 17:57:40
 */
 import anime from 'animejs';
 
@@ -26,11 +26,13 @@ const contact = messagesEl => {
   const messages = [
     'Hey there 👋',
     "I'm mukuashi@PhotoArtLife",
-    'I design and code things on the web',
-    'I\'m currently accepting freelance work.<br> You can contact me at <a href="mailto:hello@julian.gr">hello@julian.gr</a>',
-    '<a target="_blank" href="https://twitter.com/juliangarnier">twitter.com/juliangarnier</a><br><a target="_blank" href="https://codepen.io/juliangarnier">codepen.io/juliangarnier</a><br><a target="_blank" href="https://github.com/juliangarnier">github.com/juliangarnier</a>',
+    'I\'m a Creator，MUX VF-Studio Founder | Independent Designer、Photographer、Programmer/Software Engineer、Producer、Media/Novel Author etc. If you have some related needs then may contact me at <a href="mailto:mukuashi@icloud.com">mukuashi@icloud.com</a>',
+    'I Design、Photography、Code、Create and Share something on the Internet',
+    '<a target="_blank" href="http://kquanr.com/1.x">🚴 kquanr.com/1.x</a><br><a target="_blank" href="http://kquanr.com/2.x">🐿 kquanr.com/2.x</a><br><a target="_blank" href="https://weibo.com/mukuashi">🐳 weibo.com/mukuashi</a><br><a target="_blank" href="http://photoartlife.lofter.com">📸 photoartlife.lofter.com</a><br><a target="_blank" href="https://www.mepai.me/user/u_592e418fe4a53">🤡 mepai.me/PhotoArtLife</a><br><a target="_blank" href="https://500px.me/PhotoArtLife">🐶 500px.me/PhotoArtLife</a><br><a target="_blank" href="https://photoartlife.tuchong.com">🦁 photoartlife.tuchong.com</a><br><a target="_blank" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIwOTE1MzYyNg%3D%3D&hid=1&sn=63462387b1c18ed331bd84d54afab7b9">🐱 mp.weixin.com/mukuashi</a><br><a target="_blank" href="https://github.com/PhotoArtLife">👨‍💻‍ github.com/PhotoArtLife</a>',
+    '<a target="_blank" href="http://kquanr.com">🏠 My Home 3.x</a>',
     getCurrentTime(),
-    '👀 M.',
+    '👀 M. 🏊',
+    '🍲',
   ];
 
   const getFontSize = () => {
@@ -132,14 +134,14 @@ const contact = messagesEl => {
       direction: 'alternate',
       delay: i => i * 100 + 50,
     });
-    setTimeout(() => {
+    setTimeout(function() {
       loadingLoop.pause();
       dotsPulse.restart({
         opacity: 0,
         scale: 0,
         loop: false,
         direction: 'forwards',
-        update: a => {
+        update: function(a) {
           if (a.progress >= 65 && elements.bubble.classList.contains('is-loading')) {
             elements.bubble.classList.remove('is-loading');
             anime({

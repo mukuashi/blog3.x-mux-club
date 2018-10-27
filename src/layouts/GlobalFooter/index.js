@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-01 12:49:00
+ * @Last Modified time: 2018-10-27 18:31:55
 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -69,9 +69,9 @@ class GlobalFooter extends PureComponent {
         <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
           | Powered By
         </Texty>
-        <Link className="team" to="//photoartlife.lofter.com" target="_blank">
-          MUX Studio
-        </Link>
+        <a className="team" href="/1.x/contact">
+          MUX VF-Studio
+        </a>
       </footer>
     );
   }
