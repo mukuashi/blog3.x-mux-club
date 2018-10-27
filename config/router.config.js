@@ -11,11 +11,6 @@ export default [
         name: '',
         component: './Home',
       },
-      {
-        path: `/contact`,
-        name: 'Contact',
-        component: './Contact',
-      },
     ],
   },
 ];
