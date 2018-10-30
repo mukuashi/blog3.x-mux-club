@@ -6,7 +6,7 @@
     opacity: 0;
     color: $font-minor-color;
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 0.3rem;
     @include custom-position(relative, $bottom: 0.35rem);
     > div.texty {
       &:first-of-type {
@@ -17,7 +17,6 @@
         max-width: 310px;
       }
     }
-
     > a {
       color: currentColor;
       color: rgba($font-initialize-color, 0.8);
@@ -65,7 +64,7 @@
 @media (max-width: 640px) {
   :global {
     .copyright {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       .texty-inline {
         display: inline-block;
       }
