@@ -22,6 +22,12 @@ const plugins = [
       dynamicImport: {
         loadingComponent: './components/Loading/index',
       },
+      // pwa: {
+      //   workboxPluginMode: 'InjectManifest',
+      //   workboxOptions: {
+      //     importWorkboxFrom: 'local',
+      //   },
+      // },
       ...(!process.env.TEST && os.platform() === 'darwin'
         ? {
             dll: {
@@ -60,6 +66,7 @@ export default {
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
   disableDynamicImport: true,
+  disableRedirectHoist: true,
   disableCSSModules: false, // css modules
   publicPath: `${defaultSettings.version}/`,
   hash: true,
