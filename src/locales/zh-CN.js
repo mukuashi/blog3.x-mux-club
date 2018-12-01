@@ -7,10 +7,11 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-11-20 21:50:32
+ * @Last Modified time: 2018-12-01 18:11:02
 */
 // dev or online
 import { isProd, isMobile } from '@/utils';
+import pwa from './zh-CN/pwa';
 import defaultSettings from '../../config/settings.config';
 // Date、version...
 const nowYear = new Date().getFullYear();
@@ -68,4 +69,5 @@ export default {
       },
     },
   },
+  ...pwa,
 };

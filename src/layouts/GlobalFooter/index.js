@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-27 18:31:55
+ * @Last Modified time: 2018-12-02 01:44:20
 */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -63,7 +63,7 @@ class GlobalFooter extends PureComponent {
         <Texty delay={5000} type="swing" mode="smooth" className="texty-inline">
           Referenced By
         </Texty>
-        <Link to="//reactjs.org" target="_blank">
+        <Link to="//reactjs.org" target="_blank" rel="noopener noreferrer nofollow">
           Facebook React
         </Link>
         <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">

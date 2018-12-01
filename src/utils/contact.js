@@ -5,7 +5,7 @@
  * @Date:  2018-09-1012:25:27
  * @version 0.1 | 2018-09-10 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-27 17:57:40
+ * @Last Modified time: 2018-12-02 01:45:19
 */
 import anime from 'animejs';
 
@@ -28,8 +28,8 @@ const contact = messagesEl => {
     "I'm mukuashi@PhotoArtLife",
     'I\'m a Creator，MUX VF-Studio Founder | Independent Designer、Photographer、Programmer/Software Engineer、Producer、Media/Novel Author etc. If you have some related needs then may contact me at <a href="mailto:mukuashi@icloud.com">mukuashi@icloud.com</a>',
     'I Design、Photography、Code、Create and Share something on the Internet',
-    '<a target="_blank" href="http://kquanr.com/1.x">🚴 kquanr.com/1.x</a><br><a target="_blank" href="http://kquanr.com/2.x">🐿 kquanr.com/2.x</a><br><a target="_blank" href="https://weibo.com/mukuashi">🐳 weibo.com/mukuashi</a><br><a target="_blank" href="http://photoartlife.lofter.com">📸 photoartlife.lofter.com</a><br><a target="_blank" href="https://www.mepai.me/user/u_592e418fe4a53">🤡 mepai.me/PhotoArtLife</a><br><a target="_blank" href="https://500px.me/PhotoArtLife">🐶 500px.me/PhotoArtLife</a><br><a target="_blank" href="https://photoartlife.tuchong.com">🦁 photoartlife.tuchong.com</a><br><a target="_blank" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIwOTE1MzYyNg%3D%3D&hid=1&sn=63462387b1c18ed331bd84d54afab7b9">🐱 mp.weixin.com/mukuashi</a><br><a target="_blank" href="https://github.com/PhotoArtLife">👨‍💻‍ github.com/PhotoArtLife</a>',
-    '<a target="_blank" href="http://kquanr.com">🏠 My Home 3.x</a>',
+    '<a target="_blank" rel="noopener noreferrer nofollow" href="http://kquanr.com/1.x">🚴 kquanr.com/1.x</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="http://kquanr.com/2.x">🐿 kquanr.com/2.x</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://weibo.com/mukuashi">🐳 weibo.com/mukuashi</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="http://photoartlife.lofter.com">📸 photoartlife.lofter.com</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://www.mepai.me/user/u_592e418fe4a53">🤡 mepai.me/PhotoArtLife</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://500px.me/PhotoArtLife">🐶 500px.me/PhotoArtLife</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://photoartlife.tuchong.com">🦁 photoartlife.tuchong.com</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://mp.weixin.qq.com/mp/homepage?__biz=MzIwOTE1MzYyNg%3D%3D&hid=1&sn=63462387b1c18ed331bd84d54afab7b9">🐱 mp.weixin.com/mukuashi</a><br><a target="_blank" rel="noopener noreferrer nofollow" href="https://github.com/PhotoArtLife">👨‍💻‍ github.com/PhotoArtLife</a>',
+    '<a target="_blank" rel="noopener noreferrer nofollow" href="http://kquanr.com">🏠 My Home 3.x</a>',
     getCurrentTime(),
     '👀 M. 🏊',
     '🍲',

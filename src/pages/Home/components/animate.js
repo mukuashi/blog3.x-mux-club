@@ -5,7 +5,7 @@
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-10-24 01:07:11
+ * @Last Modified time: 2018-12-01 20:53:33
 */
 import anime from 'animejs';
 import defaultSettings from '../../../../config/settings.config';
@@ -65,19 +65,9 @@ const logoAnimation = (logoEl, pathEls) => {
   for (let row of pathEls) {
     row.setAttribute('stroke-dashoffset', anime.setDashoffset(row));
   }
-  //const path = anime.path('#motionPath path');
 
   logoTimeline
-    // .add({
-    //   targets: '#motionPath .el',
-    //   translateX: path('x'),
-    //   translateY: path('y'),
-    //   rotate: path('angle'),
-    //   easing: 'linear',
-    //   duration: 2000,
-    //   delay: 1200,
-    //   loop: 1,
-    // })
+
     .add({
       targets: '.dot-i',
       translateY: { value: [-200, 0], duration: 500, elasticity: 400 },
