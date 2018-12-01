@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 21:19:55
+ * @Last Modified time: 2018-12-02 01:44:58
 */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
@@ -215,7 +215,12 @@ class HomePageComponent extends PureComponent {
           <ul className="links">
             {footer.mains.buttons.map(row => (
               <li key={row.id}>
-                <a href={row.path} className={row.color + ' navigation'} target={row.target}>
+                <a
+                  href={row.path}
+                  className={row.color + ' navigation'}
+                  target={row.target}
+                  rel="noopener noreferrer nofollow"
+                >
                   <svg viewBox="0 0 180 60">
                     <path d={footer.mains.btnSvgPath} />
                   </svg>
