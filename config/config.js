@@ -20,7 +20,6 @@ const plugins = [
         baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
       },
       library: 'react', // 默认底层库 react | preact
-      // pwa: true,
       fastClick: true,
       title: defaultSettings.title,
       dynamicImport: {
