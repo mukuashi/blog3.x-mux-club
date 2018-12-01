@@ -10,7 +10,7 @@
   "scripts": {
     "start": "cross-env APP_TYPE=site umi dev",
     "start:no-mock": "cross-env MOCK=none umi dev",
-    "build": "umi build && npx workbox generateSW",
+    "build": "umi build",
     "analyze": "cross-env ANALYZE=1 umi build",
     "test": "umi test",
     "lint:style": "stylelint \"src/**/*.scss\" --syntax scss",
@@ -52,7 +52,7 @@
     "husky": "^1.1.4",
     "lint-staged": "^8.0.5",
     "node-sass": "^4.10.0",
-    "prettier": "1.14.2",
+    "prettier": "1.15.3",
     "react-document-title": "^2.0.3",
     "sass-loader": "^7.1.0",
     "stylelint": "^9.8.0",

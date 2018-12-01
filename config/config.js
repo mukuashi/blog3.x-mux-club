@@ -14,7 +14,11 @@ const plugins = [
         hmr: true,
       },
       // 国际化配置，locale，3.x暂时不适配
-      // locale:{}
+      locale: {
+        enable: false, // default false
+        default: 'zh-CN', // default zh-CN
+        baseNavigator: true, // default true, when it is true, will use `navigator.language` overwrite default
+      },
       library: 'react', // 默认底层库 react | preact
       // pwa: true,
       fastClick: true,
@@ -22,12 +26,12 @@ const plugins = [
       dynamicImport: {
         loadingComponent: './components/Loading/index',
       },
-      // pwa: {
-      //   workboxPluginMode: 'InjectManifest',
-      //   workboxOptions: {
-      //     importWorkboxFrom: 'local',
-      //   },
-      // },
+      pwa: {
+        workboxPluginMode: 'InjectManifest',
+        workboxOptions: {
+          importWorkboxFrom: 'local',
+        },
+      },
       ...(!process.env.TEST && os.platform() === 'darwin'
         ? {
             dll: {
