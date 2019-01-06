@@ -7,8 +7,8 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 18:11:02
-*/
+ * @Last Modified time: 2018-12-17 21:55:19
+ */
 // dev or online
 import { isProd, isMobile } from '@/utils';
 import pwa from './zh-CN/pwa';
@@ -29,7 +29,7 @@ export default {
   footer: {
     description: {
       Chinese:
-        '一个创作者，MUX VF-Studio 创始人 | 独立设计师、自由摄影师、程序猿/软件工程师、制片人、自媒体/公路作者等。',
+        '一个创作者，MUX VF-Studio 创始人 | 独立设计师、摄影师、程序猿/软件工程师、制片人、自媒体/公路作者等。',
       English:
         'A Creator，MUX VF-Studio Founder | Independent Designer、Photographer、Programmer/Software Engineer、Producer、Media/Novel Author etc.',
     },
