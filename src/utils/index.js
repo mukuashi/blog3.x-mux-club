@@ -8,8 +8,8 @@
  * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
  * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-27 23:27:02
-*/
+ * @Last Modified time: 2018-12-17 22:51:52
+ */
 /**
  * @date     2018-03-17
  * @desc 获取滚动条距顶部的距离
@@ -159,7 +159,7 @@ export function isMobile() {
  * @author   mukuashi | mukuashi@qq.com
  */
 export function getToken() {
-  const name = '___rl__test__cookies';
+  const name = '_bl_uid';
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) {
@@ -173,7 +173,7 @@ export function getToken() {
  * @date 2018-05-11
  * @desc deeply copy object or arrays with nested attributes
  * @param  {any} obj
- * @return {any} a depply copied replica of arguement passed
+ * @return {any} deep copy
  * @author   mukuashi | mukuashi@qq.com
  */
 export function deepClone(obj) {
@@ -190,4 +190,28 @@ export function deepClone(obj) {
     });
   }
   return newObj;
+}
+/**
+ * @date 2018-12-01
+ * @desc   load js
+ * @param  Array，res url
+ * @return script -> js
+ * @author mukuashi | mukuashi@qq.com
+ */
+export function loadExternalJS(arr) {
+  if (!(arr && arr.length > 0)) return;
+  let scriptArr = Object.values(document.getElementsByTagName('script'));
+  let ret = [];
+  arr.forEach(url => {
+    let script = document.createElement('script');
+    let html = document.getElementsByTagName('html')[0];
+    script.setAttribute('src', url);
+    script.setAttribute('charset', 'UTF-8');
+    // 避免重复加载
+    if (scriptArr.every(row => !row.src.includes(url))) {
+      html.appendChild(script);
+      ret.push(script);
+    }
+  });
+  return ret;
 }
