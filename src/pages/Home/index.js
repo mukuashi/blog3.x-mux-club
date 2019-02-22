@@ -6,8 +6,8 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 01:44:58
-*/
+ * @Last Modified time: 2019-01-06 20:09:45
+ */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
 import { connect } from 'dva';
