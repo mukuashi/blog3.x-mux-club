@@ -2,7 +2,7 @@
 @import '../../styles/mixin';
 
 .header {
-  @include custom-position(absolute, $top: 0, $right: 0.8rem, $zindex: $default-nav-zindex);
+  @include custom-position(absolute, $top: 1rem, $right: 1rem, $zindex: $default-nav-zindex);
   > button {
     font-size: 95%;
   }

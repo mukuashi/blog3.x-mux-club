@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-01-06 20:09:45
+ * @Last Modified time: 2019-03-03 19:31:56
  */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
@@ -21,8 +21,6 @@ import './index.scss';
 const { footer } = systemData;
 
 class HomePageComponent extends PureComponent {
-  state = {};
-
   componentDidMount() {
     const canvasDom = fireworks(document.querySelector('.fireworks'));
     const tap = 'ontouchstart' in window || navigator.msMaxTouchPoints ? 'touchstart' : 'mousedown';

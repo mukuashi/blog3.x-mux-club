@@ -4,9 +4,10 @@
  * @Author: mukuashi@PhotoArtLife | mukuashi@qq.com
  * @Date:   2018-01-23 12:25:27
  * @version 0.1 | 2018-01-23 // Initial version.
+ * @version 0.2 | 2018-03-03 // 补充参考文档，https://github.com/juliangarnier/anime/blob/master/lib/anime.es.js
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-01 20:53:33
-*/
+ * @Last Modified time: 2019-03-03 19:20:05
+ */
 import anime from 'animejs';
 import defaultSettings from '../../../../config/settings.config';
 //
@@ -67,7 +68,6 @@ const logoAnimation = (logoEl, pathEls) => {
   }
 
   logoTimeline
-
     .add({
       targets: '.dot-i',
       translateY: { value: [-200, 0], duration: 500, elasticity: 400 },
@@ -98,7 +98,7 @@ const logoAnimation = (logoEl, pathEls) => {
         easing: 'easeInQuad',
       },
       stroke: {
-        value: ['#FFF', el => anime.getValue(el, 'stroke')],
+        value: ['#FFF', el => anime.get(el, 'stroke')],
         duration: 800,
         delay: 3400,
         easing: 'easeInQuad',

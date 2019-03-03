@@ -5,10 +5,10 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 12:09:23
-*/
+ * @Last Modified time: 2019-03-03 19:41:35
+ */
 import React, { PureComponent } from 'react';
-import { Button } from 'antd';
+import { Tooltip, Button } from 'antd';
 import { connect } from 'dva';
 import systemData from '@/locales/zh-CN';
 import styles from './index.scss';
@@ -34,11 +34,15 @@ class GlobalHeader extends PureComponent {
   render() {
     const { language } = this.props.global;
     return (
-      <header className={styles.header}>
+      <Tooltip
+        placement="left"
+        title={language ? 'Switch Chinese' : '切换英语'}
+        className={styles.header}
+      >
         <Button ghost size="small" type="primary" onClick={this.handleChangeLanguage}>
           {language ? 'English' : '中文'}
         </Button>
-      </header>
+      </Tooltip>
     );
   }
 }

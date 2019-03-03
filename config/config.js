@@ -53,6 +53,7 @@ export default {
   define: {
     APP_TYPE: process.env.APP_TYPE || '',
   },
+  treeShaking: true,
   // 路由配置
   routes: pageRoutes,
   // Theme for antd
@@ -64,7 +65,8 @@ export default {
     'node-sass': true,
   },
   alias: {
-    '@': resolve(__dirname, 'src'), // umi默认，也可以不设置或在chainWebpack通过config.resolve.alias.set
+    '@': resolve(__dirname, 'src'), // umi默认，也可以不设置或在chainWebpack通过
+    config: resolve(__dirname, '_conf'),
   },
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
