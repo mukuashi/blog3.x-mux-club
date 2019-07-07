@@ -8,7 +8,7 @@
  * @version 0.3 | 2018-05-01 // add isMobile judge and token get.
  * @version 0.4 | 2018-05-11 // add deepCopy.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-17 22:51:52
+ * @Last Modified time: 2019-07-07 23:34:26
  */
 /**
  * @date     2018-03-17
@@ -40,7 +40,8 @@ const getRelation = (str1, str2) => {
   const arr2 = str2.split('/');
   if (arr2.every((item, index) => item === arr1[index])) {
     return 1;
-  } else if (arr1.every((item, index) => item === arr2[index])) {
+  }
+  if (arr1.every((item, index) => item === arr2[index])) {
     return 2;
   }
   return 3;
@@ -70,7 +71,7 @@ const getRenderArr = routes => {
  */
 export function getRoutes(path, routerData) {
   let routes = Object.keys(routerData).filter(
-    routePath => routePath.indexOf(path) === 0 && routePath !== path
+    routePath => routePath.indexOf(path) === 0 && routePath !== path,
   );
   // Replace path to '' eg. path='user' /user/name => name
   routes = routes.map(item => item.replace(path, ''));
@@ -139,9 +140,8 @@ export function isProd() {
   const match = 'kquanr.com';
   if (window && window.location && window.location.hostname) {
     return window.location.hostname.includes(match);
-  } else {
-    return false;
   }
+  return false;
 }
 /**
  * @date     2018-05-01
@@ -162,12 +162,12 @@ export function getToken() {
   const name = '_bl_uid';
   const value = `; ${document.cookie}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) {
-    return parts
-      .pop()
-      .split(';')
-      .shift();
-  }
+  return parts.length === 2
+    ? parts
+        .pop()
+        .split(';')
+        .shift()
+    : null;
 }
 /**
  * @date 2018-05-11
@@ -200,11 +200,11 @@ export function deepClone(obj) {
  */
 export function loadExternalJS(arr) {
   if (!(arr && arr.length > 0)) return;
-  let scriptArr = Object.values(document.getElementsByTagName('script'));
-  let ret = [];
+  const scriptArr = Object.values(document.getElementsByTagName('script'));
+  const ret = [];
   arr.forEach(url => {
-    let script = document.createElement('script');
-    let html = document.getElementsByTagName('html')[0];
+    const script = document.createElement('script');
+    const html = document.getElementsByTagName('html')[0];
     script.setAttribute('src', url);
     script.setAttribute('charset', 'UTF-8');
     // 避免重复加载
@@ -213,5 +213,6 @@ export function loadExternalJS(arr) {
       ret.push(script);
     }
   });
+  // eslint-disable-next-line consistent-return
   return ret;
 }

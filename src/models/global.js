@@ -7,15 +7,15 @@
  * @version 0.2 | 2018-09-01  // add language select.
  * @Last Modified by: mukuashi
  * @Last Modified time: 2018-09-18 23:52:16
-*/
+ */
 export default {
   namespace: 'global',
   // 初始化state
   state: {
     ismobile: false,
-    //language初始化为English -> true
+    // language初始化为English -> true
     language: true,
-    //交互次数，统计点击
+    // 交互次数，统计点击
     interaction: 0,
   },
   // 增删改查显隐切换等纯函数

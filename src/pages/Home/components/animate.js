@@ -6,7 +6,7 @@
  * @version 0.1 | 2018-01-23 // Initial version.
  * @version 0.2 | 2018-03-03 // 补充参考文档，https://github.com/juliangarnier/anime/blob/master/lib/anime.es.js
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-03-03 19:20:05
+ * @Last Modified time: 2019-07-07 23:33:42
  */
 import anime from 'animejs';
 import defaultSettings from '../../../../config/settings.config';
@@ -51,19 +51,22 @@ const createBouncyButtons = buttonEls => {
     el.onmousedown = down;
     el.onmouseleave = down;
   }
-  for (let row of buttonEls) {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const row of buttonEls) {
     createButton(row);
   }
 };
+
 const logoAnimation = (logoEl, pathEls) => {
-  const innerWidth = window.innerWidth;
+  const { innerWidth } = window;
   const maxWidth = 740;
   const version = defaultSettings.version.replace('/', '') || '3.x';
   const logoTimeline = anime.timeline({ autoplay: false });
-  let logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
+  const logoScale = innerWidth <= maxWidth ? innerWidth / maxWidth : 1;
 
-  logoEl.style.transform = 'translateY(50px) scale(' + logoScale + ')';
-  for (let row of pathEls) {
+  logoEl.style.transform = `translateY(50px) scale(${logoScale})`;
+  // eslint-disable-next-line no-restricted-syntax
+  for (const row of pathEls) {
     row.setAttribute('stroke-dashoffset', anime.setDashoffset(row));
   }
 
@@ -123,13 +126,10 @@ const logoAnimation = (logoEl, pathEls) => {
     })
     .add({
       targets: '.date',
-      innerHTML: () => {
-        const d = new Date();
-        return d.getFullYear();
-      },
       round: 1,
-      duration: 4000,
+      duration: 2000,
       easing: 'easeOutCubic',
+      innerHTML: () => new Date().getFullYear(),
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       complete: a => a.animatables[0].target.classList.remove('highlighted'),
       offset: '-=2000',
@@ -137,7 +137,7 @@ const logoAnimation = (logoEl, pathEls) => {
     .add({
       targets: '.version',
       innerHTML: parseFloat(version, 10),
-      duration: 7000,
+      duration: 3000,
       easing: 'easeOutCubic',
       begin: a => a.animatables[0].target.classList.add('highlighted'),
       update: a => {

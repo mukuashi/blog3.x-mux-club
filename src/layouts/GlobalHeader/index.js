@@ -19,6 +19,7 @@ class GlobalHeader extends PureComponent {
   static defaultProps = {
     className: 'header',
   };
+
   handleChangeLanguage = () => {
     const { dispatch, global } = this.props;
     const { language, interaction } = global;
