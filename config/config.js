@@ -5,6 +5,8 @@ import pageRoutes from './router.config';
 import webpackplugin from './plugin.config';
 import defaultSettings from './settings.config';
 
+const { TEST, NODE_ENV, APP_TYPE } = process.env;
+
 const plugins = [
   [
     'umi-plugin-react',
@@ -31,15 +33,6 @@ const plugins = [
           importWorkboxFrom: 'local',
         },
       },
-      ...(!process.env.TEST && os.platform() === 'darwin'
-        ? {
-            dll: {
-              include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch'],
-              exclude: ['@babel/runtime'],
-            },
-            hardSource: true,
-          }
-        : {}),
     },
   ],
 ];
@@ -51,9 +44,10 @@ export default {
     ie: 8,
   },
   define: {
-    APP_TYPE: process.env.APP_TYPE || '',
+    APP_TYPE: APP_TYPE || '',
   },
   treeShaking: true,
+  devtool: TEST ? 'source-map' : false,
   // 路由配置
   routes: pageRoutes,
   // Theme for antd
@@ -68,10 +62,10 @@ export default {
     '@': resolve(__dirname, 'src'), // umi默认，也可以不设置或在chainWebpack通过
     config: resolve(__dirname, '_conf'),
   },
+  disableRedirectHoist: true,
   urlLoaderExcludes: [/\.svg$/],
   ignoreMomentLocale: true,
   disableDynamicImport: true,
-  disableRedirectHoist: true,
   disableCSSModules: false, // css modules
   publicPath: `${defaultSettings.version}/`,
   hash: true,

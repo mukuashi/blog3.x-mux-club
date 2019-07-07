@@ -28,17 +28,17 @@ class HomePageComponent extends PureComponent {
       tap,
       e => {
         canvasDom.render.play();
-        let placeData = canvasDom.updateCoords(e);
+        const placeData = canvasDom.updateCoords(e);
         canvasDom.animateParticules(placeData.pointerX, placeData.pointerY);
       },
-      false
+      false,
     );
     window.addEventListener('resize', canvasDom.setCanvasSize(), false);
-    //logo动画
+    // logo动画
     const logoEl = document.querySelector('.home-logo-animation');
     const pathEls = document.querySelectorAll('.home-logo-animation path:not(.icon-curve)');
     animate.logoAnimation(logoEl, pathEls).init();
-    //功能按钮特效
+    // 功能按钮特效
     const buttonEls = document.querySelectorAll('.navigation');
     animate.createBouncyButtons(buttonEls);
   }
@@ -215,7 +215,7 @@ class HomePageComponent extends PureComponent {
               <li key={row.id}>
                 <a
                   href={row.path}
-                  className={row.color + ' navigation'}
+                  className={`${row.color} navigation`}
                   target={row.target}
                   rel="noopener noreferrer nofollow"
                 >

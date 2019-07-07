@@ -7,7 +7,7 @@
  * @version 0.1 | 2017-04-02 // Initial version.
  * @Last Modified by: mukuashi
  * @Last Modified time: 2018-09-05 11:43:19
-*/
+ */
 import React from 'react';
 // omit.js 对象浅拷贝
 import omit from 'omit.js';
@@ -21,7 +21,7 @@ export default props => {
       [`micon-${type}`]: true,
       [`micon-${size}`]: size && true,
     },
-    className
+    className,
   );
   return <i {...omit(props, ['type', 'size'])} className={classString} title={title} />;
 };

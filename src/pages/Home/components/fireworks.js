@@ -6,27 +6,27 @@
  * @version 0.1 | 2018-01-23 // Initial version.
  * @version 0.2 | 2018-08-10 // 基于React重构，ES6 Fireworks封装.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-08-29 00:48:04
-*/
+ * @Last Modified time: 2019-07-07 23:33:06
+ */
 import anime from 'animejs';
 
 const fireworks = canvasEl => {
   const ctx = canvasEl.getContext('2d');
-  const numberOfParticules = Number(location.href.split('?')[1]) || 40;
-  let pointerX = 0,
-    pointerY = 0;
+  const numberOfParticules = Number(window.location.href.split('?')[1]) || 40;
+  let pointerX = 0;
+  let pointerY = 0;
   const colors = ['#FF1461', '#18FF92', '#5A87FF', '#FBF38C'];
-  //更新点击位置
+  // 更新点击位置
   function updateCoords(e) {
     pointerX = e.clientX || e.touches[0].clientX;
     pointerY = e.clientY || e.touches[0].clientY;
-    let placeData = {
+    const placeData = {
       pointerX,
       pointerY,
     };
     return placeData;
   }
-  //根据点击位置开始生成动画
+  // 根据点击位置开始生成动画
   function setParticuleDirection(p) {
     const angle = (anime.random(0, 360) * Math.PI) / 180;
     const value = anime.random(50, 180);
@@ -36,7 +36,7 @@ const fireworks = canvasEl => {
       y: p.y + radius * Math.sin(angle),
     };
   }
-  //创建粒子轮廓
+  // 创建粒子轮廓
   function createParticule(x, y) {
     const p = {};
     p.x = x;
@@ -52,7 +52,7 @@ const fireworks = canvasEl => {
     };
     return p;
   }
-  //创建粒子原型
+  // 创建粒子原型
   function createCircle(x, y) {
     const p = {};
     p.x = x;
@@ -72,18 +72,19 @@ const fireworks = canvasEl => {
     };
     return p;
   }
-  //渲染粒子
+  // 渲染粒子
   function renderParticule(anim) {
-    for (let row of anim.animatables) {
+    // eslint-disable-next-line no-restricted-syntax
+    for (const row of anim.animatables) {
       row.target.draw();
     }
   }
   function animateParticules(x, y) {
     const circle = createCircle(x, y);
-    let particules = [];
-    for (let i = 0; i < numberOfParticules; i++) {
+    const particules = [];
+    numberOfParticules.forEach(item => {
       particules.push(createParticule(x, y));
-    }
+    });
     anime
       .timeline()
       .add({
@@ -114,7 +115,7 @@ const fireworks = canvasEl => {
         offset: 0,
       });
   }
-  //canvas设置
+  // canvas设置
   function setCanvasSize() {
     canvasEl.width = window.innerWidth * 2;
     canvasEl.height = window.innerHeight * 2;
@@ -122,7 +123,7 @@ const fireworks = canvasEl => {
     canvasEl.style.height = `${window.innerHeight}px`;
     canvasEl.getContext('2d').scale(2, 2);
   }
-  //render index
+  // render index
   const render = anime({
     duration: Infinity,
     update() {
