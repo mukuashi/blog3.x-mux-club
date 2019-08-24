@@ -6,7 +6,7 @@
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-03-03 19:31:56
+ * @Last Modified time: 2019-08-23 01:00:45
  */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
@@ -47,78 +47,6 @@ class HomePageComponent extends PureComponent {
     const canvasDom = fireworks(document.querySelector('.fireworks'));
     window.removeEventListener('resize', canvasDom.setCanvasSize(), false);
   }
-
-  handleTextAnimateCustom = e => {
-    switch (e.index) {
-      case 0:
-        return {
-          rotate: 90,
-          opacity: 0,
-          y: -60,
-        };
-      case 10:
-      case 1:
-        return {
-          y: -60,
-          x: -10,
-          opacity: 0,
-        };
-      case 9:
-      case 2:
-        return {
-          y: -60,
-          x: 20,
-          opacity: 0,
-        };
-      case 3:
-        return {
-          y: 60,
-          opacity: 0,
-        };
-      case 8:
-      case 4:
-        return {
-          x: 30,
-          opacity: 0,
-        };
-      case 5:
-        return {
-          enter: [
-            {
-              scale: 2,
-              opacity: 0,
-              type: 'set',
-            },
-            { scale: 1.2, opacity: 1, duration: 300 },
-            { scale: 0.9, duration: 200 },
-            { scale: 1.05, duration: 150 },
-            { scale: 1, duration: 100 },
-          ],
-          leave: {
-            opacity: 0,
-            scale: 0,
-          },
-        };
-      case 6:
-        return {
-          scale: 0.8,
-          x: 30,
-          y: -10,
-          opacity: 0,
-        };
-      case 7:
-        return {
-          scale: 0.8,
-          x: 30,
-          y: 10,
-          opacity: 0,
-        };
-      default:
-        return {
-          opacity: 0,
-        };
-    }
-  };
 
   render() {
     const { language, interaction, ismobile } = this.props.global;
@@ -196,20 +124,27 @@ class HomePageComponent extends PureComponent {
           </ul>
         </section>
         <footer className="home-footer-info">
-          <Texty
-            delay={interaction ? 0 : 5000}
-            mode="smooth"
-            exclusive
-            leave={{
-              opacity: 0,
-              display: 'none',
-              ease: 'easeInOutQuint',
-            }}
-            className={language ? 'description' : 'description description-chinese'}
-            style={ismobile ? { marginBottom: '1rem' } : { maxWidth: 1120 }}
-          >
-            {language ? footer.description.English : footer.description.Chinese}
-          </Texty>
+          {language && (
+            <Texty
+              delay={interaction ? 0 : 6000}
+              mode="smooth"
+              type="scale"
+              className="description"
+              style={ismobile ? { marginBottom: '1rem' } : { maxWidth: 1120 }}
+            >
+              {language && footer.description.English}
+            </Texty>
+          )}
+          {!language && (
+            <Texty
+              mode="smooth"
+              type="left"
+              className="description description-chinese"
+              style={ismobile ? { marginBottom: '1rem' } : { maxWidth: 1120 }}
+            >
+              {!language && footer.description.Chinese}
+            </Texty>
+          )}
           <ul className="links">
             {footer.mains.buttons.map(row => (
               <li key={row.id}>
