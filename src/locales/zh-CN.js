@@ -7,23 +7,21 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-01-09 12:59:07
+ * @Last Modified time: 2020-01-09 18:05:19
  */
 // dev or online
-import { isProd, isMobile } from '@/utils';
+// import { isMobile } from '@/utils';
 import pwa from './zh-CN/pwa';
 import defaultSettings from '../../config/settings.config';
 // Date、version...
 const nowYear = new Date().getFullYear();
-const version = `${ defaultSettings.version.replace('/', '') }/`;
+const version = `${defaultSettings.version.replace('/', '')}/`;
 // Media
-const mePai = isMobile()
-  ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html'
-  : 'https://www.mepai.me/user/u_592e418fe4a53';
+// const mePai = `https://${ isMobile() ? 'm.' : '' }mepai.me/photographyer/u_592e418fe4a53`
 //
 export default {
   prefix: defaultSettings.prefix,
-  version: `${ version }`,
+  version: `${version}`,
   title: defaultSettings.title,
   content: {},
   footer: {
@@ -61,11 +59,11 @@ export default {
     copyright: {
       Chinese: {
         number: 'ICP备15022927号',
-        reserved: `Copyright © 2015-${ nowYear } mukuashi Inc. All Rights Reserved. `,
+        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
       },
       English: {
         number: 'ICP Network No.15022927',
-        reserved: `Copyright © 2015-${ nowYear } mukuashi Inc. All Rights Reserved. `,
+        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
       },
     },
   },
