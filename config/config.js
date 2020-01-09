@@ -1,11 +1,10 @@
 // https://umijs.org/config/
-import os from 'os';
 import { resolve } from 'path';
 import pageRoutes from './router.config';
 import webpackplugin from './plugin.config';
 import defaultSettings from './settings.config';
 
-const { TEST, NODE_ENV, APP_TYPE } = process.env;
+const { TEST, APP_TYPE } = process.env;
 
 const plugins = [
   [
@@ -56,7 +55,7 @@ export default {
     'primary-color': defaultSettings.primaryColor,
   },
   sass: {
-    'node-sass': true,
+
   },
   alias: {
     '@': resolve(__dirname, 'src'), // umi默认，也可以不设置或在chainWebpack通过
@@ -67,7 +66,7 @@ export default {
   ignoreMomentLocale: true,
   disableDynamicImport: true,
   disableCSSModules: false, // css modules
-  publicPath: `${defaultSettings.version}/`,
+  publicPath: `${ defaultSettings.version }/`,
   hash: true,
   manifest: {
     basePath: '/',

@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-08-23 00:29:41
+ * @Last Modified time: 2020-01-09 12:59:07
  */
 // dev or online
 import { isProd, isMobile } from '@/utils';
@@ -15,7 +15,7 @@ import pwa from './zh-CN/pwa';
 import defaultSettings from '../../config/settings.config';
 // Date、version...
 const nowYear = new Date().getFullYear();
-const version = `${defaultSettings.version.replace('/', '')}/`;
+const version = `${ defaultSettings.version.replace('/', '') }/`;
 // Media
 const mePai = isMobile()
   ? 'https://m.mepai.me/photographyer/u_592e418fe4a53.html'
@@ -23,15 +23,15 @@ const mePai = isMobile()
 //
 export default {
   prefix: defaultSettings.prefix,
-  version: `${version}`,
+  version: `${ version }`,
   title: defaultSettings.title,
   content: {},
   footer: {
     description: {
       Chinese:
-        '一个创作者，MUX Lab、VF-Studio 创始人 | 独立设计师、摄影师、制片人、软件工程师、媒体作者等',
+        '一个创作者，PhotoArtLife、MUX Lab、MUX VF-Studio、浅子艺术工作室创始人 | 独立设计师、摄影师、制片人、全栈工程师、媒体作者等',
       English:
-        'A Creator，MUX Lab、VF-Studio Founder | Independent Designer、Photographer、Producer、Software Engineer、Media Author etc.',
+        'A Creator，MUX Lab、MUX VF-Studio Founder | Independent Designer、Photographer、Producer、Full Stack Developer、Media Author etc.',
     },
     mains: {
       buttons: [
@@ -61,11 +61,11 @@ export default {
     copyright: {
       Chinese: {
         number: 'ICP备15022927号',
-        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+        reserved: `Copyright © 2015-${ nowYear } mukuashi Inc. All Rights Reserved. `,
       },
       English: {
         number: 'ICP Network No.15022927',
-        reserved: `Copyright © 2015-${nowYear} mukuashi Inc. All Rights Reserved. `,
+        reserved: `Copyright © 2015-${ nowYear } mukuashi Inc. All Rights Reserved. `,
       },
     },
   },

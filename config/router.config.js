@@ -1,5 +1,3 @@
-import defaultSettings from './settings.config';
-
 export default [
   // app
   {

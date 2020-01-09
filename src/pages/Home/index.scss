@@ -136,9 +136,9 @@
       .description {
         padding: 0 1.5rem;
         height: rem(50px);
-        font-weight: lighter;
+        font-weight: 400;
         word-spacing: 2px;
-        color: $font-minor-color;
+        color: rgba($font-minor-color,.9);
         font-size: 1.1rem;
         &-chinese {
           font-weight: normal;
