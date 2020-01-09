@@ -1,4 +1,4 @@
-//webpack plugin
+// webpack plugin
 export default config => {
   config.module
     .rule('svg-with-file')
