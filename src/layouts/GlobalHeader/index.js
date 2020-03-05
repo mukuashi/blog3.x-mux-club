@@ -5,15 +5,12 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-08-23 00:03:40
+ * @Last Modified time: 2020-03-05 18:36:26
  */
 import React, { PureComponent } from 'react';
 import { Tooltip, Button } from 'antd';
 import { connect } from 'dva';
-import systemData from '@/locales/zh-CN';
 import styles from './index.scss';
-
-const { header, footer } = systemData;
 
 class GlobalHeader extends PureComponent {
   static defaultProps = {

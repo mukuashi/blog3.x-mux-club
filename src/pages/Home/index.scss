@@ -2,6 +2,7 @@
 //
 :global {
   .home {
+    user-select: none; //文本禁止复制
     position: absolute;
     overflow: hidden;
     background: $default-home-background-color;
@@ -138,7 +139,7 @@
         height: rem(50px);
         font-weight: 400;
         word-spacing: 2px;
-        color: rgba($font-minor-color,.9);
+        color: rgba($font-minor-color, 0.9);
         font-size: 1.1rem;
         &-chinese {
           font-weight: normal;
@@ -165,13 +166,13 @@
             @include size(180px, 60px);
           }
           .blue {
-            color: #5e89fb;
+            color: $color-09;
           }
           .red {
-            color: #ff1461;
+            color: $color-01;
           }
           .green {
-            color: #18f38c;
+            color: $color-05;
             svg {
               @include prefix(transform, rotate(180deg));
             }

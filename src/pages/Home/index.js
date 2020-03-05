@@ -5,8 +5,9 @@
  * @Date: 2016-01-18 17:19:07
  * @version 0.1 | 2017-02-28 // Initial version.
  * @version 0.2 | 2018-09-01 // update svg logo.
+ * @version 0.3 | 2020-01-18 // 添加5.x小程序版本.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2019-08-23 01:00:45
+ * @Last Modified time: 2020-03-05 17:00:31
  */
 import React, { PureComponent } from 'react';
 import { Avatar } from 'antd';
@@ -145,6 +146,7 @@ class HomePageComponent extends PureComponent {
               {!language && footer.description.Chinese}
             </Texty>
           )}
+          {/* button group set */}
           <ul className="links">
             {footer.mains.buttons.map(row => (
               <li key={row.id}>
