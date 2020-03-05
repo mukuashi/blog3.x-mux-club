@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-02-15 13:27:55
+ * @Last Modified time: 2020-03-05 17:01:59
  */
 // dev or online
 // import { isMobile } from '@/utils';
@@ -27,7 +27,7 @@ export default {
   footer: {
     description: {
       Chinese:
-        '一个创作者，PhotoArtLife、MUX Lab、MUX VF-Studio、浅子文化工作室创始人 | 独立设计师、摄影师、制片人、软件工程师、媒体作者等。',
+        '一个创作者，PhotoArtLife、MUX Lab、Asako Studio、浅子文化工作室创始人 | 独立设计师、摄影师、制片人、软件工程师、媒体作者等。',
       English:
         'A Creator，Asako Studio、MUX Lab/VF-Studio Founder | Independent Designer、Photographer、Producer、Full Stack Developer、Media Author etc.',
     },
@@ -47,10 +47,10 @@ export default {
         },
         {
           id: 2,
-          path: '//github.com/PhotoArtLife/blog3.x-mux-club',
-          name: 'GitHub',
-          target: '_blank',
+          path: 'https://mp.weixin.qq.com/s/t1Ys6Z9B0lCk9manU7Tf9g',
+          name: '5.x Miniprogram  🔥',
           color: 'green',
+          target: '_blank',
         },
       ],
       btnSvgPath:

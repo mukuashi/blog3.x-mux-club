@@ -5,8 +5,8 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2018-12-02 01:44:20
-*/
+ * @Last Modified time: 2020-03-05 13:23:48
+ */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import Link from 'umi/link';
@@ -23,7 +23,7 @@ class GlobalFooter extends PureComponent {
   };
 
   render() {
-    const { language, ismobile } = this.props.global;
+    const { language } = this.props.global;
     return (
       <footer className="copyright">
         <Texty
@@ -55,6 +55,24 @@ class GlobalFooter extends PureComponent {
             ? `${footer.copyright.English.number} All Rights Reserved`
             : `${footer.copyright.Chinese.number} All Rights Reserved`}
         </Texty>
+        <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
+          ©Powered By
+        </Texty>
+        <a className="team" href="/1.x/contact">
+          Asako Studio
+        </a>
+        <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
+          · Code Hosted on
+        </Texty>
+        <Link
+          to="//github.com/PhotoArtLife/blog3.x-mux-club"
+          className="code"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          Github
+        </Link>
+        <br />
         {language ? 'Version ' : '版本'}
         <em className="version">0.0</em>
         Copyright © 2015-
@@ -66,12 +84,6 @@ class GlobalFooter extends PureComponent {
         <Link to="//reactjs.org" target="_blank" rel="noopener noreferrer nofollow">
           Facebook React
         </Link>
-        <Texty delay={5000} type="scaleBig" mode="reverse" className="texty-inline">
-          | Powered By
-        </Texty>
-        <a className="team" href="/1.x/contact">
-          MUX VF-Studio
-        </a>
       </footer>
     );
   }

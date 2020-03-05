@@ -3,10 +3,11 @@
 
 :global {
   .copyright {
+    user-select: none; //文本禁止复制
     opacity: 0;
     color: $font-minor-color;
     text-align: center;
-    padding: 0 0.3rem;
+    padding: 0 0.6rem;
     @include custom-position(relative, $bottom: 0.35rem);
     > div.texty {
       &:first-of-type {
@@ -49,6 +50,9 @@
       }
       &.team {
         color: $color-06;
+      }
+      &.code {
+        color: $color-10;
       }
     }
     em {

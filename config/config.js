@@ -38,7 +38,6 @@ const plugins = [
 
 export default {
   // add for transfer to umi
-  plugins,
   targets: {
     ie: 8,
   },
@@ -54,9 +53,7 @@ export default {
   theme: {
     'primary-color': defaultSettings.primaryColor,
   },
-  sass: {
-
-  },
+  sass: {},
   alias: {
     '@': resolve(__dirname, 'src'), // umi默认，也可以不设置或在chainWebpack通过
     config: resolve(__dirname, '_conf'),
@@ -66,12 +63,13 @@ export default {
   ignoreMomentLocale: true,
   disableDynamicImport: true,
   disableCSSModules: false, // css modules
-  publicPath: `${ defaultSettings.version }/`,
+  publicPath: `${defaultSettings.version}/`,
   hash: true,
   manifest: {
     basePath: '/',
   },
   chainWebpack: webpackplugin,
+  plugins,
   cssnano: {
     mergeRules: false,
   },
