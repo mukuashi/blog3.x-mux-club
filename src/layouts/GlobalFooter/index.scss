@@ -3,6 +3,9 @@
 
 :global {
   .copyright {
+    p {
+      margin: 0;
+    }
     user-select: none; //文本禁止复制
     opacity: 0;
     color: $font-minor-color;
