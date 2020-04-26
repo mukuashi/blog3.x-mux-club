@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-26 15:54:31
+ * @Last Modified time: 2020-04-26 16:05:44
  */
 // dev or online
 // import { isMobile } from '@/utils';
@@ -27,9 +27,9 @@ export default {
   footer: {
     description: {
       Chinese:
-        '一个创作者，PhotoArtLife、Asako Studio、浅子文化工作室创始人｜独立设计师、软件工程师、独立开发者、开源作者、摄影师、制片人等。',
+        '一个创作者，PhotoArtLife、浅子文化工作室（实验室）创始人｜独立设计师、软件工程师、独立开发者、开源作者、摄影师、制片人等。',
       English:
-        'A Creator，Asako Studio、MUX Lab/VF-Studio Founder｜Independent Designer、Photographer、Producer、Full Stack Developer、Media Author etc.',
+        'A Creator，PhotoArtLife、Asako Studio Founder｜Independent Designer、Photographer、Producer、Full Stack Developer、Engineer etc.',
     },
     mains: {
       buttons: [
