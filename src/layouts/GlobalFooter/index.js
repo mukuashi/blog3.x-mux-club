@@ -5,7 +5,7 @@
  * @Date:   2017-03-26 12:25:27
  * @version 0.1 | 2017-03-26 // Initial version.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2020-04-26 15:59:23
+ * @Last Modified time: 2020-04-28 23:04:46
  */
 import React, { PureComponent } from 'react';
 import { connect } from 'dva';
@@ -52,7 +52,7 @@ class GlobalFooter extends PureComponent {
         </Link>
         <br />
         {language ? 'Version ' : '版本'}
-        <em className="version">0.0</em>
+        <em className="version" />
         Copyright © 2015 -<em className="date">0</em>
         <em>mukuashi Inc.</em>
         <Texty delay={5000} type="swing" mode="smooth" className="texty-inline">
