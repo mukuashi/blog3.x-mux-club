@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-03-13 20:14:34
+ * @Last Modified time: 2021-12-23 02:16:02
  */
 // dev or online
 // import { isMobile } from '@/utils';
@@ -47,8 +47,8 @@ export default {
         },
         {
           id: 2,
-          path: 'https://mp.weixin.qq.com/s/t1Ys6Z9B0lCk9manU7Tf9g',
-          name: '5.x Miniprogram  🔥',
+          path: 'https://linktr.ee/mukuashi',
+          name: 'Next Crypto  🔥',
           color: 'green',
           target: '_blank',
         },

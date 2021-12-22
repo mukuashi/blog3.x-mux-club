@@ -29,7 +29,7 @@ class GlobalFooter extends PureComponent {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="http://www.beian.miit.gov.cn"
+            href="https://beian.miit.gov.cn"
           >{`${footer.copyright.icp} `}</a>
           All Rights Reserved
         </p>
