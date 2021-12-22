@@ -5,36 +5,39 @@
   .copyright {
     p {
       margin: 0;
+      > a {
+        color: $color-09;
+      }
     }
-    user-select: none; //文本禁止复制
-    opacity: 0;
+    padding: 0 0.6rem;
     color: $font-minor-color;
     text-align: center;
-    padding: 0 0.6rem;
+    opacity: 0;
+    user-select: none; //文本禁止复制
     @include custom-position(relative, $bottom: 0.35rem);
     > div.texty {
       &:first-of-type {
-        margin: 0 auto;
+        max-width: 310px;
         height: 1.4rem;
+        margin: 0 auto;
         line-height: 1.4rem;
         text-align: center;
-        max-width: 310px;
       }
     }
     > a {
+      padding: 0 0.22rem;
       color: currentColor;
       color: rgba($font-initialize-color, 0.8);
-      padding: 0 0.22rem;
       &::after {
-        content: '';
-        opacity: 0;
-        display: block;
         position: absolute;
-        left: 0;
         bottom: -3px;
+        left: 0;
+        display: block;
         width: 100%;
         border-bottom: 1px solid currentColor;
+        opacity: 0;
         transition: opacity 0.75s ease;
+        content: '';
       }
       &:hover,
       .highlighted {
@@ -49,8 +52,8 @@
         color: $color-09;
       }
       &.date {
-        color: $color-01;
         padding-left: 0.2rem;
+        color: $color-01;
       }
       &.team {
         color: $color-06;
@@ -60,8 +63,8 @@
       }
     }
     em {
-      font-style: normal;
       padding-right: 0.3rem;
+      font-style: normal;
     }
     .texty-inline {
       display: inline;
