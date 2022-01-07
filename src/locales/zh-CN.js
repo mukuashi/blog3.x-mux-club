@@ -7,7 +7,7 @@
  * @version 0.2 | 2017-12-15  // add many banner images.
  * @version 0.3 | 2018-06-10  // add env split.
  * @Last Modified by: mukuashi
- * @Last Modified time: 2021-12-23 02:16:02
+ * @Last Modified time: 2021-12-30 13:05:56
  */
 // dev or online
 // import { isMobile } from '@/utils';
@@ -27,9 +27,9 @@ export default {
   footer: {
     description: {
       Chinese:
-        '一个创作者，PhotoArtLife、浅子文化工作室（实验室）创始人｜自由摄影师、旅拍博主、独立设计师、开发者、全栈工程师、产品经理等。',
+        '一个创作者、青年/加密艺术家、摄影师、旅拍博主、独立设计师、开发者、产品经理、浅子艺术工作室（实验室）创始人等',
       English:
-        'A Creator，PhotoArtLife、Asako Studio Founder｜Photographer、Independent Designer、Producer、Full Stack Developer、Engineer、Blogger etc.',
+        'A Creator、Crypto NFT Artist、Photographer、Independent Designer、Full Stack Developer、Engineer、Producer、Asako Studio Founder etc.',
     },
     mains: {
       buttons: [
@@ -47,7 +47,7 @@ export default {
         },
         {
           id: 2,
-          path: 'https://linktr.ee/mukuashi',
+          path: 'https://ltx.bio/mukuashi',
           name: 'Next Crypto  🔥',
           color: 'green',
           target: '_blank',
